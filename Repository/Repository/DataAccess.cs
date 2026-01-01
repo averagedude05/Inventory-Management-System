@@ -38,10 +38,10 @@ namespace Repository
 
         public DataAccess()
         {
-            AppDomain.CurrentDomain.SetData("DataDirectory", Path.GetFullPath(Path.Combine(Application.StartupPath, "..\\..")));
+            //AppDomain.CurrentDomain.SetData("DataDirectory", Path.GetFullPath(Path.Combine(Application.StartupPath, "..\\..")));
             //Path.Combine(Application.StartupPath, ".."));
 
-            string connStr = (ConfigurationManager.ConnectionStrings["smsdb"].ConnectionString);
+            string connStr = (ConfigurationManager.ConnectionStrings["db"].ConnectionString);
             CONNECTION_STRING = connStr;
         }
 
@@ -145,4 +145,5 @@ namespace Repository
 
             return result;
         }
+    }
 }
