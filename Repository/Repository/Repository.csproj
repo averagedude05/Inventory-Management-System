@@ -43,7 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
+    <Compile Include="ManagerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Service\Service.csproj">
+      <Project>{f7be3ac7-275e-4317-ae16-359de1f499d0}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UI\UI.csproj">
+      <Project>{9c7c0aa1-e227-485c-880e-c7a872e79920}</Project>
+      <Name>UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

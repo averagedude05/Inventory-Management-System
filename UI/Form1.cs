@@ -16,5 +16,20 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nametb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void passtb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
