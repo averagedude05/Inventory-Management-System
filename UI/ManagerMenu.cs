@@ -63,7 +63,9 @@ namespace UI
 
         private void Deletebtn_Click(object sender, EventArgs e)
         {
-
+            DeleteForm df=new DeleteForm(name);
+            this.Hide();
+            df.Show();
         }
 
         private void logoutbtn_Click(object sender, EventArgs e)
