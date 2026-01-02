@@ -1,5 +1,6 @@
 ﻿using Service;
 using System.Data;
+using System.Xml.Linq;
 namespace Repository
 {
     public class ManagerRepository
@@ -29,6 +30,29 @@ namespace Repository
             return null;
 
         }
-
+        public int AddProduct(Product p)
+        {
+            var sql = "insert into Product(Price,ProductName,StockQuantity,CatagoryId) values(@Price,@ProductName,@StockQuantity,@CatagoryId)";
+            var command = d.GetCommand(sql); 
+            command.Parameters.AddWithValue("@ProductName",p.ProductName);
+            command.Parameters.AddWithValue("@Price", p.ProductPrice);
+            command.Parameters.AddWithValue("@StockQuantity", p.ProductQuantity);
+            command.Parameters.AddWithValue("@CatagoryId", p.ProductCatagory);
+            return d.ExecuteNonQuery(command);
+         
+        }
+        public DataTable getAllProduct()
+        {
+            var sql = "SELECT p.ProductId, p.ProductName, p.Price, p.StockQuantity, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId;";
+            var command = d.GetCommand(sql);
+            return d.Execute(command);
+            
+        }
+        public DataTable getAllCatagories()
+        {
+            var sql = "select * from Catagory";
+            var command = d.GetCommand(sql);
+            return d.Execute(command);
+        }
     }
 }

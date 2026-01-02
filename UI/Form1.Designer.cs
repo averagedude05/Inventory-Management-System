@@ -81,7 +81,7 @@
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(18, 50);
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management Sytem";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

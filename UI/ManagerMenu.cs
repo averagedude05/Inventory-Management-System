@@ -14,12 +14,17 @@ namespace UI
     {
         Form1 f;
         string name;
+        public ManagerMenu()
+        {
+            InitializeComponent();
+        }
         public ManagerMenu(Form1 f, string name)
         {
             InitializeComponent();
             this.f = f;
             this.name = name;
             this.Text = "Inventory Managament System, "+name;
+            wlclb.Text = " Welcome, " + name;
         }
 
         private void ManagerMenu_Load(object sender, EventArgs e)
@@ -42,6 +47,7 @@ namespace UI
 
         private void wellb_Click(object sender, EventArgs e)
         {
+            wellb.Text = " Welcome, " + name;
 
         }
 
@@ -64,6 +70,28 @@ namespace UI
         {
             this.Hide();
             f.Show();
+        }
+
+        private void Addbtn_Click(object sender, EventArgs e)
+        {
+            AddForm a = new AddForm(name);
+            a.Show();
+            this.Hide();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
