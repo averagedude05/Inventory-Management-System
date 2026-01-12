@@ -63,5 +63,19 @@ namespace Repository
             command.Parameters.AddWithValue("@ProductId", id);
             return d.ExecuteNonQuery(command);
         }
+        public int updateProduct(int id, Product p)
+        {
+            var sql = "update Product set Price=@price, ProductName=@productname," +
+                " StockQuantity=@stockquantity, CatagoryId=@catagoryId where ProductId=@id";
+            var command = d.GetCommand(sql);
+            command.Parameters.AddWithValue("@price", p.ProductPrice);
+            command.Parameters.AddWithValue("@productname", p.ProductName);
+            command.Parameters.AddWithValue("@stockquantity", p.ProductQuantity);
+            command.Parameters.AddWithValue("@catagoryId", p.ProductCatagory);
+            command.Parameters.AddWithValue("@id",id);
+
+            return d.ExecuteNonQuery(command);
+           
+        }
     }
 }

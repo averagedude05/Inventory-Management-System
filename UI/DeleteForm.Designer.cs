@@ -33,7 +33,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.delwlclb = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.backbtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.deletebtn = new System.Windows.Forms.Button();
@@ -49,13 +48,12 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.delwlclb);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.backbtn);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(211, 707);
+            this.panel1.Size = new System.Drawing.Size(211, 756);
             this.panel1.TabIndex = 15;
             // 
             // button1
@@ -88,18 +86,6 @@
             this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 10;
             // 
-            // backbtn
-            // 
-            this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbtn.ForeColor = System.Drawing.Color.White;
-            this.backbtn.Location = new System.Drawing.Point(12, 704);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(185, 44);
-            this.backbtn.TabIndex = 9;
-            this.backbtn.Text = "Move to Main Menu";
-            this.backbtn.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -124,7 +110,7 @@
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(436, 572);
+            this.deletebtn.Location = new System.Drawing.Point(657, 412);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(129, 45);
             this.deletebtn.TabIndex = 16;
@@ -140,13 +126,13 @@
             this.deleteGrid.AllowUserToResizeRows = false;
             this.deleteGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.deleteGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.deleteGrid.Location = new System.Drawing.Point(217, 0);
+            this.deleteGrid.Location = new System.Drawing.Point(246, 39);
             this.deleteGrid.MultiSelect = false;
             this.deleteGrid.Name = "deleteGrid";
             this.deleteGrid.ReadOnly = true;
             this.deleteGrid.RowHeadersWidth = 51;
             this.deleteGrid.RowTemplate.Height = 24;
-            this.deleteGrid.Size = new System.Drawing.Size(883, 489);
+            this.deleteGrid.Size = new System.Drawing.Size(984, 270);
             this.deleteGrid.TabIndex = 0;
             this.deleteGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.deleteGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.deleteGrid_CellMouseClick);
@@ -155,11 +141,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1102, 707);
+            this.ClientSize = new System.Drawing.Size(1255, 756);
             this.Controls.Add(this.deletebtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.deleteGrid);
             this.Name = "DeleteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeleteForm";
             this.Load += new System.EventHandler(this.DeleteForm_Load);
             this.panel1.ResumeLayout(false);
@@ -174,7 +161,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label delwlclb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button backbtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;

@@ -27,11 +27,6 @@ namespace UI
             wlclb.Text = " Welcome, " + name;
         }
 
-        private void ManagerMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void backbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -40,10 +35,7 @@ namespace UI
 
         
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void wellb_Click(object sender, EventArgs e)
         {
@@ -53,6 +45,9 @@ namespace UI
 
         private void Updatebtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            UpdateForm u = new UpdateForm(name);
+            u.Show();
 
         }
 
@@ -81,19 +76,8 @@ namespace UI
             this.Hide();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+     
+    
     }
 }

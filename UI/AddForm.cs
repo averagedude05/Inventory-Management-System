@@ -23,44 +23,37 @@ namespace UI
         public AddForm(string name)
         {
             InitializeComponent();
+           
             this.name = name;
-            addwlclb.Text = "Welcome " + name;
+            //addwlclb.Text = "Welcome " + name;
             m = new ManagerRepository();
             errorProvider = new ErrorProvider();
-
-
+            this.Text = "Welcome: " + name+" Add products";
+            //loadAll();
         }
         void loadProduct()
         {
             dgvloadproduct.DataSource = m.getAllProduct();
         }
-        void loadCatagory()
+        void loadAll()
         {
-            DataTable dt = m.getAllCatagories();
-            catagorycombo.DataSource = dt;
+            loadProduct();
+            catagorycombo.DataSource = m.getAllCatagories();
             catagorycombo.DisplayMember = "CatagoryName";//name user can see
             catagorycombo.ValueMember = "CatagoryId";//the code will see only the id number
+
         }
         private void backbtn_Click(object sender, EventArgs e)
         {
-            ManagerMenu m = new ManagerMenu();
             this.Hide();
+            ManagerMenu m = new ManagerMenu();
             m.Show();
-
-        }
-
-        private void productPricttb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void productQuantitylb_Click(object sender, EventArgs e)
-        {
 
         }
 
         private void savebtn_Click(object sender, EventArgs e)
         {
+            
             string productname= productNametb.Text; 
             int productquantity; 
             int catid; 
@@ -76,7 +69,7 @@ namespace UI
             }
             else if (char.IsDigit(productname[0]))
             {
-                errorProvider.SetError(productNametb, "Please enter name");
+                MessageBox.Show("Product name can't start with number");
                 isValid = false;
             }
             else
@@ -121,19 +114,22 @@ namespace UI
             {
                 
                 productquantity = int.Parse(productQuantitytb.Text);
-                catid = int.Parse(catagorycombo.SelectedValue.ToString());/*catagorycombo.SelectedValue 
-                                                                           returns an object need to convert 
-                                                                           to string and then parse to an int*/
+                catid = int.Parse(catagorycombo.SelectedValue.ToString());/*catagorycombo.SelectedValue                                                           to string and then parse to an int*/
                 price = decimal.Parse(productPricttb.Text);
                 p = new Product(productname, productquantity, catid, price);
-                if (m.AddProduct(p) > 0)
+                int r = m.AddProduct(p);
+                if (r > 0)
                 {
                     MessageBox.Show("Entered");
                    loadProduct();
                 }
+                else if (r == -1)
+                {
+                    MessageBox.Show("Product Already Exists");
+                }
                 else
                 {
-                    MessageBox.Show("False");
+                    MessageBox.Show("Please enter a product");
                 }
 
             }
@@ -143,23 +139,16 @@ namespace UI
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error happened");
+                MessageBox.Show("Error");
                 Console.WriteLine(ex.Message);
             }
             
         }
 
-        private void productIdtb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddForm_Load(object sender, EventArgs e)
         {
-            
-            loadProduct();
-            dgvloadproduct.ReadOnly = true;
-            loadCatagory();
+
+            loadAll();
         }
 
         private void clearbtn_Click(object sender, EventArgs e)
@@ -167,6 +156,18 @@ namespace UI
             productNametb.Text = "";
             productQuantitytb.Text = "";
             productPricttb.Text = " ";
+
+        }
+
+        private void backbtn_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.Show();
+        }
+
+        private void dgvloadproduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

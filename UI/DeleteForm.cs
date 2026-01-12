@@ -60,12 +60,11 @@ namespace UI
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this record?","Confirm Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
+                    MessageBox.Show("Delete Successfull");
                     int id = int.Parse(deleteGrid.SelectedRows[0].Cells["ProductId"].Value.ToString());
                     if (m.deleteProduct(id) > 0)
-                    { 
+                    {
                         loadAll();
-                        MessageBox.Show("Delete Successfull");
-
                     }
                     else
                     {

@@ -110,8 +110,13 @@ namespace Repository
                 cmd.Connection.Open();
                 result = cmd.ExecuteNonQuery();
             }
+            catch(SqlException ex)
+            {
+                return -1;
+            }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
             }
             finally
             {
@@ -133,6 +138,10 @@ namespace Repository
             {
                 command.Connection.Open();
                 result = command.ExecuteNonQuery();
+            }
+            catch(SqlException ex)
+            {
+                return -1;
             }
             catch (Exception ex)
             {
