@@ -30,8 +30,8 @@ namespace UI
 
         private void backbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
             f.Show();
+            this.Hide();
         }
 
         
@@ -46,30 +46,37 @@ namespace UI
 
         private void Updatebtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
             UpdateForm u = new UpdateForm();
             u.Show();
+            this.Hide();
 
         }
 
         private void dashboardbtn_Click(object sender, EventArgs e)
         {
             PurchaseForm pf = new PurchaseForm();
-            this.Hide();
             pf.Show();
+            this.Hide();
         }
 
         private void Deletebtn_Click(object sender, EventArgs e)
         {
             DeleteForm df=new DeleteForm();
-            this.Hide();
             df.Show();
+            this.Hide();
         }
 
         private void logoutbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            f.Show();
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+
+           
+            if (result == DialogResult.Yes)
+            { 
+                Form1 login = new Form1();
+                login.Show();
+                this.Dispose();
+            }
         }
 
         private void Addbtn_Click(object sender, EventArgs e)
@@ -82,8 +89,8 @@ namespace UI
         private void historybtn_Click(object sender, EventArgs e)
         {
             HistoryForm f = new HistoryForm();
-            this.Hide();
             f.Show();
+            this.Hide();
         }
     }
 }

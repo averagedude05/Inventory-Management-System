@@ -42,9 +42,10 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-           ManagerMenu mm=new ManagerMenu();
+
+            ManagerMenu f1 = new ManagerMenu();
+            f1.Show();
             this.Hide();
-            mm.Show();
         }
 
         private void deleteGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

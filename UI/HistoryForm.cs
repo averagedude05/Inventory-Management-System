@@ -52,9 +52,9 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             ManagerMenu f1 = new ManagerMenu();
             f1.Show();
+            this.Hide();
         }
     }
 }

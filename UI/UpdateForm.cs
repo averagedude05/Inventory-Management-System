@@ -44,13 +44,20 @@ namespace UI
        
         private void updatebtn_Click(object sender, EventArgs e)
         {
-            string n = productNametb.Text;
-            decimal p = decimal.Parse(productPricetb.Text);
-            int q = int.Parse(productQuantitytb.Text);
-            int catid = int.Parse(productCatagoryCombobox.SelectedValue.ToString());
-            int restock = int.Parse(restocktb.Text.ToString());
-            string status = availablecombobox.Text;
-            pu = new Product(n, q, catid, p,restock,status);
+            DialogResult result = MessageBox.Show("Are you sure you want to Update?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+            if (result == DialogResult.Yes)
+            {
+                string n = productNametb.Text;
+                decimal p = decimal.Parse(productPricetb.Text);
+                int q = int.Parse(productQuantitytb.Text);
+                int catid = int.Parse(productCatagoryCombobox.SelectedValue.ToString());
+                int restock = int.Parse(restocktb.Text.ToString());
+                string status = availablecombobox.Text;
+                pu = new Product(n, q, catid, p, restock, status);
+            }
+            
             if(m.updateProduct(rowclicked, pu) > 0)
             {
                 MessageBox.Show("Update Successfull");
@@ -82,9 +89,10 @@ namespace UI
 
         private void backbtn_Click(object sender, EventArgs e)
         {
+
+            ManagerMenu f1 = new ManagerMenu();
+            f1.Show();
             this.Hide();
-            ManagerMenu f = new ManagerMenu();
-            f.Show();
         }
 
         private void FullNamelb_Click(object sender, EventArgs e)

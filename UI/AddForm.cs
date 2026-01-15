@@ -46,10 +46,10 @@ namespace UI
         }
         private void backbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ManagerMenu m = new ManagerMenu();
-            m.Show();
 
+            ManagerMenu f1 = new ManagerMenu();
+            f1.Show();
+            this.Hide();
         }
 
         private void savebtn_Click(object sender, EventArgs e)
