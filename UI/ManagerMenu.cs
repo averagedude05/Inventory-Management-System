@@ -13,16 +13,17 @@ namespace UI
     public partial class ManagerMenu : Form
     {
         Form1 f;
-        string name;
+        string name = Service.CurrentUser.Username;
+       
         public ManagerMenu()
         {
             InitializeComponent();
         }
-        public ManagerMenu(Form1 f, string name)
+        public ManagerMenu(Form1 f)
         {
             InitializeComponent();
             this.f = f;
-            this.name = name;
+            
             this.Text = "Inventory Managament System, "+name;
             wlclb.Text = " Welcome, " + name;
         }
@@ -46,19 +47,21 @@ namespace UI
         private void Updatebtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            UpdateForm u = new UpdateForm(name);
+            UpdateForm u = new UpdateForm();
             u.Show();
 
         }
 
         private void dashboardbtn_Click(object sender, EventArgs e)
         {
-
+            PurchaseForm pf = new PurchaseForm();
+            this.Hide();
+            pf.Show();
         }
 
         private void Deletebtn_Click(object sender, EventArgs e)
         {
-            DeleteForm df=new DeleteForm(name);
+            DeleteForm df=new DeleteForm();
             this.Hide();
             df.Show();
         }
@@ -76,8 +79,11 @@ namespace UI
             this.Hide();
         }
 
-
-     
-    
+        private void historybtn_Click(object sender, EventArgs e)
+        {
+            HistoryForm f = new HistoryForm();
+            this.Hide();
+            f.Show();
+        }
     }
 }

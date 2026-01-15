@@ -15,15 +15,18 @@ namespace UI
     {
         ManagerMenu mm;
         ManagerRepository m;
-        public DeleteForm(string name)
+        string name=Service.CurrentUser.Username;
+        public DeleteForm()
         {
             InitializeComponent();
-            delwlclb.Text = "Welcome "+name;
+            FullNamelb.Text = "Welcome: "+ Service.CurrentUser.UserFullName;
+
             m = new ManagerRepository();
+           
         }
         void loadAll()
         {
-            deleteGrid.DataSource = m.getAllProduct();
+            deleteGrid.DataSource = m.getAllProductDelete();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,11 +63,12 @@ namespace UI
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this record?","Confirm Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Delete Successfull");
                     int id = int.Parse(deleteGrid.SelectedRows[0].Cells["ProductId"].Value.ToString());
                     if (m.deleteProduct(id) > 0)
                     {
+                       // deleteGrid.SelectedRows[0].Visible = false;
                         loadAll();
+                        MessageBox.Show("Delete Successfull");
                     }
                     else
                     {

@@ -19,17 +19,18 @@ namespace UI
         ManagerRepository m;
         Product p;
         ErrorProvider errorProvider;
-
+        
+       
         public AddForm(string name)
         {
             InitializeComponent();
            
             this.name = name;
-            //addwlclb.Text = "Welcome " + name;
+            FullNamelb.Text = "Welcome: "+Service.CurrentUser.UserFullName;
             m = new ManagerRepository();
             errorProvider = new ErrorProvider();
             this.Text = "Welcome: " + name+" Add products";
-            //loadAll();
+            
         }
         void loadProduct()
         {
@@ -58,6 +59,7 @@ namespace UI
             int productquantity; 
             int catid; 
             decimal price;
+            int restock;
             bool isValid = true;//used to make sure no bad data is entered to database
             //error handler only shows the error but doesn't stop from entering the data
             int v;
@@ -106,6 +108,16 @@ namespace UI
             {
                 errorProvider.SetError(productPricttb, "");
             }
+            if (string.IsNullOrEmpty(restocktb.Text))
+            {
+                errorProvider.SetError(restocktb, "Restock Level is Empty");
+                isValid = false;
+
+            }
+            else
+            {
+                errorProvider.SetError(restocktb, "");
+            }
             if (!isValid)
             {
                 return;//stops the program if all data not valid
@@ -114,9 +126,11 @@ namespace UI
             {
                 
                 productquantity = int.Parse(productQuantitytb.Text);
-                catid = int.Parse(catagorycombo.SelectedValue.ToString());/*catagorycombo.SelectedValue                                                           to string and then parse to an int*/
+                catid = int.Parse(catagorycombo.SelectedValue.ToString());                                                     
                 price = decimal.Parse(productPricttb.Text);
-                p = new Product(productname, productquantity, catid, price);
+                restock = int.Parse(restocktb.Text);
+                string status = "";
+                p = new Product(productname, productquantity, catid, price,restock,status);
                 int r = m.AddProduct(p);
                 if (r > 0)
                 {
@@ -167,6 +181,11 @@ namespace UI
         }
 
         private void dgvloadproduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FullNamelb_Click(object sender, EventArgs e)
         {
 
         }

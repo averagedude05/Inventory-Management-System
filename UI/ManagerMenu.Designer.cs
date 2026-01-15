@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerMenu));
             this.dashboardbtn = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.Addbtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.wellb = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +48,8 @@
             this.Deletebtn = new System.Windows.Forms.Button();
             this.Updatebtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Addwindowbtn = new System.Windows.Forms.Button();
+            this.historybtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -60,14 +61,15 @@
             this.dashboardbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dashboardbtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.dashboardbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dashboardbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboardbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dashboardbtn.Location = new System.Drawing.Point(809, 323);
+            this.dashboardbtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.dashboardbtn.Location = new System.Drawing.Point(12, 468);
             this.dashboardbtn.Name = "dashboardbtn";
-            this.dashboardbtn.Size = new System.Drawing.Size(215, 70);
+            this.dashboardbtn.Size = new System.Drawing.Size(176, 46);
             this.dashboardbtn.TabIndex = 4;
-            this.dashboardbtn.Text = "Dashboard";
+            this.dashboardbtn.Text = "Restock Product";
             this.dashboardbtn.UseVisualStyleBackColor = true;
             this.dashboardbtn.Click += new System.EventHandler(this.dashboardbtn_Click);
             // 
@@ -76,50 +78,32 @@
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button7.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.Location = new System.Drawing.Point(486, 494);
+            this.button7.ForeColor = System.Drawing.SystemColors.Control;
+            this.button7.Location = new System.Drawing.Point(12, 547);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(207, 70);
+            this.button7.Size = new System.Drawing.Size(172, 43);
             this.button7.TabIndex = 6;
             this.button7.Text = "Update Details";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.Updatebtn_Click);
-            // 
-            // Addbtn
-            // 
-            this.Addbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Addbtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Addbtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Addbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Addbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Addbtn.Location = new System.Drawing.Point(475, 323);
-            this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(207, 70);
-            this.Addbtn.TabIndex = 5;
-            this.Addbtn.Text = "Add Product";
-            this.Addbtn.UseVisualStyleBackColor = false;
-            this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button2.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(827, 494);
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(12, 389);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(207, 70);
+            this.button2.Size = new System.Drawing.Size(176, 46);
             this.button2.TabIndex = 7;
             this.button2.Text = "Delete Product";
             this.button2.UseVisualStyleBackColor = false;
@@ -209,8 +193,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panel1.Controls.Add(this.historybtn);
+            this.panel1.Controls.Add(this.Addwindowbtn);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.dashboardbtn);
             this.panel1.Controls.Add(this.wlclb);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -225,9 +214,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.wlclb.AutoSize = true;
+            this.wlclb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wlclb.ForeColor = System.Drawing.SystemColors.Control;
             this.wlclb.Location = new System.Drawing.Point(51, 208);
             this.wlclb.Name = "wlclb";
-            this.wlclb.Size = new System.Drawing.Size(44, 16);
+            this.wlclb.Size = new System.Drawing.Size(53, 20);
             this.wlclb.TabIndex = 11;
             this.wlclb.Text = "label4";
             // 
@@ -250,9 +241,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(23, 727);
+            this.button1.Location = new System.Drawing.Point(8, 710);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 53);
+            this.button1.Size = new System.Drawing.Size(176, 46);
             this.button1.TabIndex = 9;
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = true;
@@ -360,7 +351,39 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            //this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // Addwindowbtn
+            // 
+            this.Addwindowbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Addwindowbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Addwindowbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addwindowbtn.ForeColor = System.Drawing.Color.White;
+            this.Addwindowbtn.Location = new System.Drawing.Point(12, 305);
+            this.Addwindowbtn.Name = "Addwindowbtn";
+            this.Addwindowbtn.Size = new System.Drawing.Size(176, 46);
+            this.Addwindowbtn.TabIndex = 12;
+            this.Addwindowbtn.Text = "Add Product";
+            this.Addwindowbtn.UseVisualStyleBackColor = true;
+            this.Addwindowbtn.Click += new System.EventHandler(this.Addbtn_Click);
+            // 
+            // historybtn
+            // 
+            this.historybtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.historybtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.historybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.historybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.historybtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.historybtn.Location = new System.Drawing.Point(12, 619);
+            this.historybtn.Name = "historybtn";
+            this.historybtn.Size = new System.Drawing.Size(176, 46);
+            this.historybtn.TabIndex = 13;
+            this.historybtn.Text = "Restock History";
+            this.historybtn.UseVisualStyleBackColor = true;
+            this.historybtn.Click += new System.EventHandler(this.historybtn_Click);
             // 
             // ManagerMenu
             // 
@@ -368,11 +391,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1293, 801);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.Addbtn);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.dashboardbtn);
             this.Name = "ManagerMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management System";
@@ -390,7 +409,6 @@
 
         private System.Windows.Forms.Button dashboardbtn;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button Addbtn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label wellb;
         private System.Windows.Forms.Label label1;
@@ -408,5 +426,7 @@
         private System.Windows.Forms.Button Deletebtn;
         private System.Windows.Forms.Button Updatebtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Addwindowbtn;
+        private System.Windows.Forms.Button historybtn;
     }
 }

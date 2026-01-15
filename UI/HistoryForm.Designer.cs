@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class DeleteForm
+    partial class HistoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryForm));
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.FullNamelb = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.deletebtn = new System.Windows.Forms.Button();
-            this.deleteGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deleteGrid)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(233, 77);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1041, 581);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel1
             // 
@@ -53,8 +69,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(211, 756);
-            this.panel1.TabIndex = 15;
+            this.panel1.Size = new System.Drawing.Size(211, 712);
+            this.panel1.TabIndex = 16;
             // 
             // button1
             // 
@@ -74,7 +90,7 @@
             this.FullNamelb.AutoSize = true;
             this.FullNamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FullNamelb.ForeColor = System.Drawing.SystemColors.Control;
-            this.FullNamelb.Location = new System.Drawing.Point(18, 219);
+            this.FullNamelb.Location = new System.Drawing.Point(19, 216);
             this.FullNamelb.Name = "FullNamelb";
             this.FullNamelb.Size = new System.Drawing.Size(53, 20);
             this.FullNamelb.TabIndex = 11;
@@ -110,63 +126,33 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // deletebtn
-            // 
-            this.deletebtn.Location = new System.Drawing.Point(657, 412);
-            this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(129, 45);
-            this.deletebtn.TabIndex = 16;
-            this.deletebtn.Text = "Delete";
-            this.deletebtn.UseVisualStyleBackColor = true;
-            this.deletebtn.Click += new System.EventHandler(this.deletebtn_Click);
-            // 
-            // deleteGrid
-            // 
-            this.deleteGrid.AllowUserToAddRows = false;
-            this.deleteGrid.AllowUserToDeleteRows = false;
-            this.deleteGrid.AllowUserToResizeColumns = false;
-            this.deleteGrid.AllowUserToResizeRows = false;
-            this.deleteGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.deleteGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.deleteGrid.Location = new System.Drawing.Point(246, 39);
-            this.deleteGrid.MultiSelect = false;
-            this.deleteGrid.Name = "deleteGrid";
-            this.deleteGrid.ReadOnly = true;
-            this.deleteGrid.RowHeadersWidth = 51;
-            this.deleteGrid.RowTemplate.Height = 24;
-            this.deleteGrid.Size = new System.Drawing.Size(984, 270);
-            this.deleteGrid.TabIndex = 0;
-            this.deleteGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.deleteGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.deleteGrid_CellMouseClick);
-            // 
-            // DeleteForm
+            // HistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1255, 756);
-            this.Controls.Add(this.deletebtn);
+            this.ClientSize = new System.Drawing.Size(1402, 712);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.deleteGrid);
-            this.Name = "DeleteForm";
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "HistoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DeleteForm";
-            this.Load += new System.EventHandler(this.DeleteForm_Load);
+            this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deleteGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label FullNamelb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button deletebtn;
-        private System.Windows.Forms.DataGridView deleteGrid;
     }
 }

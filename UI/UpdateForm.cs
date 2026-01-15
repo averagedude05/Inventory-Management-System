@@ -19,30 +19,38 @@ namespace UI
         ManagerRepository m;
         Product pu;
         int rowclicked;
-
-        public UpdateForm(string name)
+        string name = Service.CurrentUser.Username;
+        public UpdateForm()
         {
             InitializeComponent();
-            this.Text = " Welcome " + name + " Update Product Details";
+           
             m = new ManagerRepository();
             loadAll();
-        }
+            FullNamelb.Text = "Welcome: "+Service.CurrentUser.UserFullName;
+            
 
+        }
+       
         void loadAll()
         {
             updatedatagridview.DataSource = m.getAllProduct();
             productCatagoryCombobox.DataSource = m.getAllCatagories();
             productCatagoryCombobox.DisplayMember = "CatagoryName";
             productCatagoryCombobox.ValueMember = "CatagoryId";
+           
+          // availablecombobox.DataSource = m.getStatus(rowclicked);
+           // availablecombobox.ValueMember = "Status";
         }
-
+       
         private void updatebtn_Click(object sender, EventArgs e)
         {
             string n = productNametb.Text;
             decimal p = decimal.Parse(productPricetb.Text);
             int q = int.Parse(productQuantitytb.Text);
             int catid = int.Parse(productCatagoryCombobox.SelectedValue.ToString());
-            pu = new Product(n, q, catid, p);
+            int restock = int.Parse(restocktb.Text.ToString());
+            string status = availablecombobox.Text;
+            pu = new Product(n, q, catid, p,restock,status);
             if(m.updateProduct(rowclicked, pu) > 0)
             {
                 MessageBox.Show("Update Successfull");
@@ -58,12 +66,13 @@ namespace UI
         {
             if (updatedatagridview.SelectedRows.Count > 0)
             {
-                rowclicked= int.Parse(updatedatagridview.SelectedRows[0].Cells["ProductId"].Value.ToString());
+                rowclicked = int.Parse(updatedatagridview.SelectedRows[0].Cells["ProductId"].Value.ToString());
                 productNametb.Text = updatedatagridview.SelectedRows[0].Cells["ProductName"].Value.ToString();
                 productPricetb.Text = updatedatagridview.SelectedRows[0].Cells["Price"].Value.ToString();
                 productQuantitytb.Text = updatedatagridview.SelectedRows[0].Cells["StockQuantity"].Value.ToString();
-                productCatagoryCombobox.DisplayMember = updatedatagridview.SelectedRows[0].Cells["CatagoryName"].Value.ToString();
-
+                productCatagoryCombobox.Text = updatedatagridview.SelectedRows[0].Cells["CatagoryName"].Value.ToString();
+                restocktb.Text = updatedatagridview.SelectedRows[0].Cells["Restock_at"].Value.ToString();
+                availablecombobox.Text= updatedatagridview.SelectedRows[0].Cells["Status"].Value.ToString();
             }
             else
             {
@@ -76,6 +85,11 @@ namespace UI
             this.Hide();
             ManagerMenu f = new ManagerMenu();
             f.Show();
+        }
+
+        private void FullNamelb_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

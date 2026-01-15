@@ -11,6 +11,7 @@ namespace UI
         ManagerRepository manager;
         string name;
         string password;
+        public  User user;
         public Form1()
         {
             InitializeComponent();
@@ -36,25 +37,39 @@ namespace UI
         {
             string username = nametb.Text.ToLower().Trim();
             string userpass = passtb.Text.ToLower().Trim();
-            User user=manager.Verify(username, userpass);
+            user = manager.Verify(username, userpass);
             if (user == null)
             {
                 MessageBox.Show("No user found");
             }
-            else if (user.UserRole == "admin")
+            if (user != null)
             {
-                MessageBox.Show("welcome admin");
+                CurrentUser.getCurrentUser(user);
+                if (user.UserRole == "admin")
+                {
+                    MessageBox.Show("welcome admin");
+                }
+                else if (user.UserRole.ToLower() == "manager")
+                {
+                    ManagerMenu m = new ManagerMenu(this);
+                    this.Hide();
+                    m.Show();
+                    nametb.Text = " ";
+                    passtb.Text = " ";
+                }
+                else if (user.UserRole.ToLower() == "sales")
+                {
+                    ManagerMenu m = new ManagerMenu(this);
+                    this.Hide();
+                    m.Show();
+                    nametb.Text = " ";
+                    passtb.Text = " ";
+                }
             }
-            else if (user.UserRole.ToLower() == "manager")
-            {
-                ManagerMenu m = new ManagerMenu(this, user.UserName);
-                this.Hide();
-                m.Show();
-                nametb.Text = " ";
-                passtb.Text=" ";
-            }
-        
             
+
+
         }
+       
     }
 }

@@ -8,10 +8,22 @@ namespace Service
 {
     public class User
     {
-        public String UserName { get;  set; }
-        public String UserPass { get;  set; }
-        public String UserRole { get;  set; }
+        public string UserName { get; set; }
+        public string UserPass { get; set; }
+        public string UserRole { get; set; }
+        public string UserPhone { get; set; }
+        public string Full_Name { get; set; }
+        public int UserId { get; private set; }
+        public User(string name, string role, int id,string phn, string fn)
+        {
+            UserName = name;
+            UserRole = role;
+            UserId = id;
+            UserPhone = phn;
+            Full_Name = fn;
 
-
+        }
+        
     }
+   
 }
