@@ -116,12 +116,13 @@ namespace Repository
             return d.Execute(command);
 
         }
-        public int CreatePurchase(int id, decimal total)
+        public int CreatePurchase(int id, decimal total,string n)
         {
-            var sql = "insert into Purchase(UserId,TotalAmount,Status) values (@id, @total, 'Complete'); SELECT SCOPE_IDENTITY();";
+            var sql = "insert into Purchase(UserId,TotalAmount,Status, Notes) values (@id, @total, 'Complete', @n); SELECT SCOPE_IDENTITY();";
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@id", id);
             command.Parameters.AddWithValue("@total", total);
+            command.Parameters.AddWithValue("@n", n);
             DataTable dt = d.Execute(command);
             return int.Parse(dt.Rows[0][0].ToString());
         }
@@ -146,7 +147,7 @@ namespace Repository
         public DataTable getFullPurchaseHistory()
         {
             var sql = @"select p.PurchaseId, u.UserName, pr.ProductName, pp.Quantity, pp.UnitPrice, 
-                (pp.Quantity * pp.UnitPrice) as SubTotal, p.TotalAmount, p.PurchaseDate 
+                (pp.Quantity * pp.UnitPrice) as SubTotal, p.TotalAmount, p.PurchaseDate, p.Notes
                 from Purchase p 
                 join Product_Purchase pp ON p.PurchaseId = pp.PurchaseId 
                 join Product pr ON pp.ProductId = pr.ProductId 

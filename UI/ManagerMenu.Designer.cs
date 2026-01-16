@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerMenu));
-            this.dashboardbtn = new System.Windows.Forms.Button();
+            this.restockbtn = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.wellb = new System.Windows.Forms.Label();
@@ -38,6 +38,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.historybtn = new System.Windows.Forms.Button();
+            this.Addwindowbtn = new System.Windows.Forms.Button();
             this.wlclb = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,30 +50,28 @@
             this.Deletebtn = new System.Windows.Forms.Button();
             this.Updatebtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Addwindowbtn = new System.Windows.Forms.Button();
-            this.historybtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dashboardbtn
+            // restockbtn
             // 
-            this.dashboardbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.restockbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dashboardbtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.dashboardbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dashboardbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboardbtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.dashboardbtn.Location = new System.Drawing.Point(12, 468);
-            this.dashboardbtn.Name = "dashboardbtn";
-            this.dashboardbtn.Size = new System.Drawing.Size(176, 46);
-            this.dashboardbtn.TabIndex = 4;
-            this.dashboardbtn.Text = "Restock Product";
-            this.dashboardbtn.UseVisualStyleBackColor = true;
-            this.dashboardbtn.Click += new System.EventHandler(this.dashboardbtn_Click);
+            this.restockbtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.restockbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.restockbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restockbtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.restockbtn.Location = new System.Drawing.Point(12, 468);
+            this.restockbtn.Name = "restockbtn";
+            this.restockbtn.Size = new System.Drawing.Size(176, 46);
+            this.restockbtn.TabIndex = 4;
+            this.restockbtn.Text = "Restock Product";
+            this.restockbtn.UseVisualStyleBackColor = true;
+            this.restockbtn.Click += new System.EventHandler(this.restockbtn_Click);
             // 
             // button7
             // 
@@ -196,7 +196,7 @@
             this.panel1.Controls.Add(this.historybtn);
             this.panel1.Controls.Add(this.Addwindowbtn);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.dashboardbtn);
+            this.panel1.Controls.Add(this.restockbtn);
             this.panel1.Controls.Add(this.wlclb);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button7);
@@ -207,6 +207,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 803);
             this.panel1.TabIndex = 11;
+            // 
+            // historybtn
+            // 
+            this.historybtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.historybtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.historybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.historybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.historybtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.historybtn.Location = new System.Drawing.Point(12, 619);
+            this.historybtn.Name = "historybtn";
+            this.historybtn.Size = new System.Drawing.Size(176, 46);
+            this.historybtn.TabIndex = 13;
+            this.historybtn.Text = "Restock History";
+            this.historybtn.UseVisualStyleBackColor = true;
+            this.historybtn.Click += new System.EventHandler(this.historybtn_Click);
+            // 
+            // Addwindowbtn
+            // 
+            this.Addwindowbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Addwindowbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Addwindowbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addwindowbtn.ForeColor = System.Drawing.Color.White;
+            this.Addwindowbtn.Location = new System.Drawing.Point(12, 305);
+            this.Addwindowbtn.Name = "Addwindowbtn";
+            this.Addwindowbtn.Size = new System.Drawing.Size(176, 46);
+            this.Addwindowbtn.TabIndex = 12;
+            this.Addwindowbtn.Text = "Add Product";
+            this.Addwindowbtn.UseVisualStyleBackColor = true;
+            this.Addwindowbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // wlclb
             // 
@@ -352,39 +385,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Addwindowbtn
-            // 
-            this.Addwindowbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Addwindowbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Addwindowbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Addwindowbtn.ForeColor = System.Drawing.Color.White;
-            this.Addwindowbtn.Location = new System.Drawing.Point(12, 305);
-            this.Addwindowbtn.Name = "Addwindowbtn";
-            this.Addwindowbtn.Size = new System.Drawing.Size(176, 46);
-            this.Addwindowbtn.TabIndex = 12;
-            this.Addwindowbtn.Text = "Add Product";
-            this.Addwindowbtn.UseVisualStyleBackColor = true;
-            this.Addwindowbtn.Click += new System.EventHandler(this.Addbtn_Click);
-            // 
-            // historybtn
-            // 
-            this.historybtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.historybtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.historybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.historybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.historybtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.historybtn.Location = new System.Drawing.Point(12, 619);
-            this.historybtn.Name = "historybtn";
-            this.historybtn.Size = new System.Drawing.Size(176, 46);
-            this.historybtn.TabIndex = 13;
-            this.historybtn.Text = "Restock History";
-            this.historybtn.UseVisualStyleBackColor = true;
-            this.historybtn.Click += new System.EventHandler(this.historybtn_Click);
-            // 
             // ManagerMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -407,7 +407,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button dashboardbtn;
+        private System.Windows.Forms.Button restockbtn;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label wellb;

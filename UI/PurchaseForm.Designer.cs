@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.showsubtotal = new System.Windows.Forms.Label();
             this.showpricelb = new System.Windows.Forms.Label();
             this.Removebtn = new System.Windows.Forms.Button();
@@ -46,9 +45,7 @@
             this.unitpricelb = new System.Windows.Forms.Label();
             this.productQuantitylb = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.confirmbtn = new System.Windows.Forms.Button();
-            this.notetb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.purchasedataGridView = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -57,6 +54,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.notetb = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productdatagridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productquantitynumeric)).BeginInit();
@@ -68,7 +67,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.showsubtotal);
             this.panel1.Controls.Add(this.showpricelb);
             this.panel1.Controls.Add(this.Removebtn);
@@ -87,16 +85,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(716, 763);
             this.panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(498, 446);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "Remove";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // showsubtotal
             // 
@@ -232,23 +220,14 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.confirmbtn);
             this.panel2.Controls.Add(this.notetb);
+            this.panel2.Controls.Add(this.confirmbtn);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.purchasedataGridView);
             this.panel2.Location = new System.Drawing.Point(923, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(474, 765);
             this.panel2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 611);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Notes";
             // 
             // confirmbtn
             // 
@@ -259,14 +238,6 @@
             this.confirmbtn.Text = "Confirm";
             this.confirmbtn.UseVisualStyleBackColor = true;
             this.confirmbtn.Click += new System.EventHandler(this.confirmbtn_Click);
-            // 
-            // notetb
-            // 
-            this.notetb.Location = new System.Drawing.Point(54, 667);
-            this.notetb.Multiline = true;
-            this.notetb.Name = "notetb";
-            this.notetb.Size = new System.Drawing.Size(230, 68);
-            this.notetb.TabIndex = 61;
             // 
             // label7
             // 
@@ -356,6 +327,23 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // notetb
+            // 
+            this.notetb.Location = new System.Drawing.Point(54, 633);
+            this.notetb.Multiline = true;
+            this.notetb.Name = "notetb";
+            this.notetb.Size = new System.Drawing.Size(233, 76);
+            this.notetb.TabIndex = 61;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(54, 584);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 16);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Note:";
+            // 
             // PurchaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -409,8 +397,7 @@
         private System.Windows.Forms.Label showpricelb;
         private System.Windows.Forms.Label showsubtotal;
         private System.Windows.Forms.Button confirmbtn;
-        private System.Windows.Forms.TextBox notetb;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox notetb;
     }
 }

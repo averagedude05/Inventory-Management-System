@@ -22,6 +22,7 @@ namespace UI
         decimal price;
         decimal total;
         string note;
+        int purchaseId;
         public PurchaseForm()
         {
             InitializeComponent();
@@ -69,6 +70,20 @@ namespace UI
             productnamecombobox.ValueMember = "ProductId";
             showpricelb.Text = "0";
             showsubtotal.Text = "0";
+            productquantitynumeric.Text = "0";
+
+        }
+        private void productnamecombobox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            int categoryId;
+            if (string.IsNullOrEmpty(productnamecombobox.SelectedValue.ToString()))
+                return;
+               
+
+            productnamecombobox.DataSource = m.getSelectedProduct(productId);
+            showpricelb.Text = "0";
+            showsubtotal.Text = "0";
+            productquantitynumeric.Text = "0";
 
         }
         void createTempTable()
@@ -91,7 +106,7 @@ namespace UI
         {
             productId = int.Parse(productnamecombobox.SelectedValue.ToString());
             productName = productnamecombobox.Text;
-            note = notetb.Text;
+           
             
 
             if(!int.TryParse(productquantitynumeric.Text,out qty))
@@ -114,7 +129,7 @@ namespace UI
             temptable.Rows.Add(row);
             
             purchasedataGridView.DataSource = temptable;
-           // productquantitynumeric.Text = "0";
+           
         }
 
         private void Removebtn_Click(object sender, EventArgs e)
@@ -138,24 +153,32 @@ namespace UI
         {
             try
             {
-                if (temptable.Rows.Count == 0) return;
-
+                if (temptable.Rows.Count == 0) 
+                    return;
+                note = notetb.Text;
                 total = Service.Sub_total_Calculation.getTotal(temptable);
 
-                
-                int purchaseId = m.CreatePurchase(Service.CurrentUser.Id, total);
-
-
-                foreach (DataRow row in temptable.Rows)
+                if (string.IsNullOrEmpty(note))
                 {
-                    productId = int.Parse(row["Product Id"].ToString());
-                    qty = int.Parse(row["Quantity"].ToString());
-                    price = decimal.Parse(row["Unit Price"].ToString());
+                 purchaseId = m.CreatePurchase(Service.CurrentUser.Id, total,"");
 
-                    // Use the purchaseId we got from CreatePurchase
-                    m.addProduct_Purchase(productId, qty, price, purchaseId);
-                    m.updateProductStock(productId, qty);
                 }
+                else
+                {
+                    purchaseId = m.CreatePurchase(Service.CurrentUser.Id, total, note);
+                }
+
+
+                    foreach (DataRow row in temptable.Rows)
+                    {
+                        productId = int.Parse(row["Product Id"].ToString());
+                        qty = int.Parse(row["Quantity"].ToString());
+                        price = decimal.Parse(row["Unit Price"].ToString());
+
+
+                        m.addProduct_Purchase(productId, qty, price, purchaseId);
+                        m.updateProductStock(productId, qty);
+                    }
 
                 MessageBox.Show("Purchase Saved. Total: " + total);
                 temptable.Rows.Clear();
