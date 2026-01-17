@@ -15,7 +15,7 @@ namespace UI
     {
         Form1 f;
         string name = Service.CurrentUser.Username;
-      //  ManagerRepository man = new ManagerRepository(); 
+      
         public ManagerMenu()
         {
             InitializeComponent();
@@ -64,7 +64,7 @@ namespace UI
             PurchaseForm pf = new PurchaseForm();
             pf.Show();
             this.Hide();
-          //  man.CreatePurchase(Service.CurrentUser.Id,0);
+          
             
         }
         private void Deletebtn_Click(object sender, EventArgs e)

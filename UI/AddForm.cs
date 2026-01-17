@@ -134,12 +134,12 @@ namespace UI
                 int r = m.AddProduct(p);
                 if (r > 0)
                 {
-                    MessageBox.Show("Entered");
+                    MessageBox.Show("Prodcut Added Successfully");
                    loadProduct();
                 }
                 else if (r == -1)
                 {
-                    MessageBox.Show("Product Already Exists");
+                    MessageBox.Show("Product already exists");
                 }
                 else
                 {
@@ -169,7 +169,8 @@ namespace UI
         {
             productNametb.Text = "";
             productQuantitytb.Text = "";
-            productPricttb.Text = " ";
+            productPricttb.Text = "";
+            restocktb.Text = "";
 
         }
 

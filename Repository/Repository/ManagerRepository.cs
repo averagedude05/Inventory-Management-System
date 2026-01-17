@@ -126,14 +126,7 @@ namespace Repository
             DataTable dt = d.Execute(command);
             return int.Parse(dt.Rows[0][0].ToString());
         }
-        public int getPurchaseId(int id)
-        {
-            var sql = "select max(PurchaseId) as PurchaseId from Purchase where UserId=@id";
-            var command = d.GetCommand(sql);
-            command.Parameters.AddWithValue("@id", id);
-            DataTable dt = d.Execute(command);
-            return int.Parse(dt.Rows[0]["PurchaseId"].ToString());
-        }
+        
         public int addProduct_Purchase(int productid, int q, decimal unit, int purchaseid)
         {
             var sql = "insert into Product_Purchase(ProductId,PurchaseId,Quantity,UnitPrice) values(@pid, @purchaseid, @qty, @unitp)";

@@ -39,6 +39,7 @@ namespace UI
                 {
                     row["UserName"] = "";
                     row["TotalAmount"] = row["SubTotal"] ;
+                    row["Notes"] = "";
                 }
                 else
                 {
