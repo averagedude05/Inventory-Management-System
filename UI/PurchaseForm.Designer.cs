@@ -45,6 +45,8 @@
             this.unitpricelb = new System.Windows.Forms.Label();
             this.productQuantitylb = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.notetb = new System.Windows.Forms.TextBox();
             this.confirmbtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.purchasedataGridView = new System.Windows.Forms.DataGridView();
@@ -54,8 +56,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.notetb = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productdatagridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productquantitynumeric)).BeginInit();
@@ -171,6 +171,7 @@
             this.productnamecombobox.Name = "productnamecombobox";
             this.productnamecombobox.Size = new System.Drawing.Size(121, 24);
             this.productnamecombobox.TabIndex = 52;
+            this.productnamecombobox.SelectedValueChanged += new System.EventHandler(this.productnamecombobox_SelectedValueChanged);
             // 
             // catagorylb
             // 
@@ -228,6 +229,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(474, 765);
             this.panel2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(54, 584);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 16);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Note:";
+            // 
+            // notetb
+            // 
+            this.notetb.Location = new System.Drawing.Point(54, 633);
+            this.notetb.Multiline = true;
+            this.notetb.Name = "notetb";
+            this.notetb.Size = new System.Drawing.Size(233, 76);
+            this.notetb.TabIndex = 61;
             // 
             // confirmbtn
             // 
@@ -326,23 +344,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // notetb
-            // 
-            this.notetb.Location = new System.Drawing.Point(54, 633);
-            this.notetb.Multiline = true;
-            this.notetb.Name = "notetb";
-            this.notetb.Size = new System.Drawing.Size(233, 76);
-            this.notetb.TabIndex = 61;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 584);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 16);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Note:";
             // 
             // PurchaseForm
             // 

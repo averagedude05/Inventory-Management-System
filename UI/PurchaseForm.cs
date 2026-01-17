@@ -50,9 +50,7 @@ namespace UI
         {
             
                 productdatagridview.DataSource = m.getAllProductDelete();
-                //purchasedataGridView.DataSource = m.getAllProduct_Purchase();
 
-                
                 productCatagoryCombobox.DataSource = m.getAllCatagories();
                 productCatagoryCombobox.DisplayMember = "CatagoryName";
                 productCatagoryCombobox.ValueMember = "CatagoryId";
@@ -61,6 +59,7 @@ namespace UI
 
         private void productCatagoryCombobox_SelectedValueChanged(object sender, EventArgs e)
         {
+           
             int categoryId;
             if (!int.TryParse(productCatagoryCombobox.SelectedValue.ToString(), out categoryId))
                 return;
@@ -75,12 +74,8 @@ namespace UI
         }
         private void productnamecombobox_SelectedValueChanged(object sender, EventArgs e)
         {
-            int categoryId;
-            if (string.IsNullOrEmpty(productnamecombobox.SelectedValue.ToString()))
-                return;
-               
 
-            productnamecombobox.DataSource = m.getSelectedProduct(productId);
+         
             showpricelb.Text = "0";
             showsubtotal.Text = "0";
             productquantitynumeric.Text = "0";
@@ -111,12 +106,11 @@ namespace UI
 
             if(!int.TryParse(productquantitynumeric.Text,out qty))
             {
-                MessageBox.Show("Add Quantity");
+                MessageBox.Show("Quantity can't be 0");
             }
             var v = m.getUnitPrice(productId);
             if (v != null)
                 price = decimal.Parse(v);
-            MessageBox.Show(price.ToString());
             showpricelb.Text = "৳ " + price.ToString();
             DataRow row = temptable.NewRow();
             row["Product Id"] = productId;
@@ -124,7 +118,8 @@ namespace UI
             row["Quantity"] = qty;
             row["Unit Price"] = price;
             row["Sub Total"] = qty * price;
-            showsubtotal.Text= (qty * price).ToString();
+            showsubtotal.Text = $"৳ {qty} x {price}={(qty * price).ToString()}";
+            
 
             temptable.Rows.Add(row);
             
@@ -160,16 +155,14 @@ namespace UI
 
                 if (string.IsNullOrEmpty(note))
                 {
-                 purchaseId = m.CreatePurchase(Service.CurrentUser.Id, total,"");
+                    purchaseId = m.CreatePurchase(Service.CurrentUser.Id, total, "");
 
                 }
                 else
                 {
                     purchaseId = m.CreatePurchase(Service.CurrentUser.Id, total, note);
                 }
-
-
-                    foreach (DataRow row in temptable.Rows)
+                foreach (DataRow row in temptable.Rows)
                     {
                         productId = int.Parse(row["Product Id"].ToString());
                         qty = int.Parse(row["Quantity"].ToString());
@@ -179,8 +172,8 @@ namespace UI
                         m.addProduct_Purchase(productId, qty, price, purchaseId);
                         m.updateProductStock(productId, qty);
                     }
+                MessageBox.Show("Purchase Successfull");
 
-                MessageBox.Show("Purchase Saved. Total: " + total);
                 temptable.Rows.Clear();
             }
             catch (Exception ex)
@@ -189,11 +182,6 @@ namespace UI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            HistoryForm f = new HistoryForm();
-            f.Show();
-        }
+     
     }
 }

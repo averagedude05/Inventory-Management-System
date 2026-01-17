@@ -110,7 +110,7 @@ namespace Repository
         }
         public DataTable getSelectedProduct(int id)
         {
-            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId where p.CatagoryId=@id and p.Status='Available'";
+            var sql = "select p.ProductId, p.ProductName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId where p.CatagoryId=@id and p.Status='Available'";
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@id", id);
             return d.Execute(command);
