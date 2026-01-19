@@ -82,6 +82,7 @@ namespace UI
                     }
                     string note = "Created by system";
                     int purchaseid = m.CreatePurchase(m.getSystemid(), total, note);
+
                     foreach (DataRow row in dt.Rows)
                     {
                         unitPrice = decimal.Parse(row["Price"].ToString());
