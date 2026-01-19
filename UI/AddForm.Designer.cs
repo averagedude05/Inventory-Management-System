@@ -63,7 +63,7 @@
             this.dgvloadproduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvloadproduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvloadproduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvloadproduct.Location = new System.Drawing.Point(230, 12);
+            this.dgvloadproduct.Location = new System.Drawing.Point(292, 29);
             this.dgvloadproduct.Name = "dgvloadproduct";
             this.dgvloadproduct.ReadOnly = true;
             this.dgvloadproduct.RowHeadersWidth = 51;
@@ -193,7 +193,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(23, 29);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(137, 130);
+            this.pictureBox2.Size = new System.Drawing.Size(153, 130);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -239,7 +239,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(211, 765);
+            this.panel1.Size = new System.Drawing.Size(227, 765);
             this.panel1.TabIndex = 47;
             // 
             // FullNamelb

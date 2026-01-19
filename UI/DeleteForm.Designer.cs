@@ -53,7 +53,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(211, 756);
+            this.panel1.Size = new System.Drawing.Size(224, 756);
             this.panel1.TabIndex = 15;
             // 
             // button1
@@ -105,7 +105,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(23, 29);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(137, 130);
+            this.pictureBox2.Size = new System.Drawing.Size(150, 130);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -128,13 +128,13 @@
             this.deleteGrid.AllowUserToResizeRows = false;
             this.deleteGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.deleteGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.deleteGrid.Location = new System.Drawing.Point(246, 39);
+            this.deleteGrid.Location = new System.Drawing.Point(272, 39);
             this.deleteGrid.MultiSelect = false;
             this.deleteGrid.Name = "deleteGrid";
             this.deleteGrid.ReadOnly = true;
             this.deleteGrid.RowHeadersWidth = 51;
             this.deleteGrid.RowTemplate.Height = 24;
-            this.deleteGrid.Size = new System.Drawing.Size(984, 270);
+            this.deleteGrid.Size = new System.Drawing.Size(958, 270);
             this.deleteGrid.TabIndex = 0;
             this.deleteGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.deleteGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.deleteGrid_CellMouseClick);

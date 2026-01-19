@@ -73,12 +73,7 @@ namespace Repository
             var command = d.GetCommand(sql);
             return d.Execute(command);
         }
-        //public DataTable getStatus(int id)
-        //{
-        //    var sql = "select Stauts from Product where ProductId=@id";
-        //    var command = d.GetCommand(sql);
-        //    return d.Execute(command);
-        //}
+    
         public int deleteProduct(int id)
         {
             var sql = "update Product set Status= 'UnAvailable' where ProductId=@ProductId";
@@ -89,7 +84,8 @@ namespace Repository
         public int updateProduct(int id, Product p)
         {
             var sql = "update Product set Price=@price, ProductName=@productname," +
-                " StockQuantity=@stockquantity, CatagoryId=@catagoryId, Updated_at=getdate(), Status=@status where ProductId=@id";
+                " StockQuantity=@stockquantity, CatagoryId=@catagoryId, Updated_at=getdate(), " +
+                "Status=@status where ProductId=@id";
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@price", p.ProductPrice);
             command.Parameters.AddWithValue("@productname", p.ProductName);
@@ -110,7 +106,8 @@ namespace Repository
         }
         public DataTable getSelectedProduct(int id)
         {
-            var sql = "select p.ProductId, p.ProductName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId where p.CatagoryId=@id and p.Status='Available'";
+            var sql = "select p.ProductId, p.ProductName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId" +
+                " where p.CatagoryId=@id and p.Status='Available'";
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@id", id);
             return d.Execute(command);
@@ -118,7 +115,9 @@ namespace Repository
         }
         public int CreatePurchase(int id, decimal total,string n)
         {
-            var sql = "insert into Purchase(UserId,TotalAmount,Status, Notes) values (@id, @total, 'Complete', @n); SELECT SCOPE_IDENTITY();";
+            var sql = "insert into Purchase(UserId,TotalAmount,Status, Notes)" +
+                " values (@id, @total, 'Complete', @n); " +
+                "SELECT SCOPE_IDENTITY();";
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@id", id);
             command.Parameters.AddWithValue("@total", total);
@@ -129,7 +128,8 @@ namespace Repository
         
         public int addProduct_Purchase(int productid, int q, decimal unit, int purchaseid)
         {
-            var sql = "insert into Product_Purchase(ProductId,PurchaseId,Quantity,UnitPrice) values(@pid, @purchaseid, @qty, @unitp)";
+            var sql = "insert into Product_Purchase(ProductId,PurchaseId,Quantity,UnitPrice) " +
+                "values(@pid, @purchaseid, @qty, @unitp)";
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@pid", productid);
             command.Parameters.AddWithValue("@purchaseid", purchaseid);
@@ -158,13 +158,35 @@ namespace Repository
             command.Parameters.AddWithValue("@ProductId", productId);
             return d.ExecuteNonQuery(command);
         }
-        public int autocreate(int productId)
+
+        public int getSystemid()
         {
-            var sql = "update Product set ProductQuantity = Restock_at + @qty WHERE ProductId = @ProductId";
+            var sql = "select UserId from Users where Username='system'";
             var command = d.GetCommand(sql);
-            command.Parameters.AddWithValue("@qty", 50);
-            command.Parameters.AddWithValue("@ProductId", productId);
-            return d.ExecuteNonQuery(command);
+            DataTable dt = d.Execute(command);
+            if (dt.Rows.Count > 0)
+            {
+                return int.Parse(dt.Rows[0]["UserId"].ToString());
+            }
+            else return 0;
+        }
+        public DataTable autorestock()
+        {
+            var sql = "select ProductName, ProductId, Price, StockQuantity, Restock_at from Product " +
+                "where StockQuantity<Restock_at";
+            var command = d.GetCommand(sql);
+            return d.Execute(command);
+
+        }
+        public DataTable searchProduct(string name)
+        {
+            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, " +
+                "p.Created_at, p.Updated_at, P.Status, c.CatagoryName " +
+                "FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId " +
+                "where p.ProductName like @name";
+            var command = d.GetCommand(sql);
+            command.Parameters.AddWithValue("@name", "%" + name + "%");
+            return d.Execute(command);
         }
 
     }

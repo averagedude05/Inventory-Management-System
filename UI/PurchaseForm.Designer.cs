@@ -151,6 +151,11 @@
             // productquantitynumeric
             // 
             this.productquantitynumeric.Location = new System.Drawing.Point(191, 496);
+            this.productquantitynumeric.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.productquantitynumeric.Name = "productquantitynumeric";
             this.productquantitynumeric.Size = new System.Drawing.Size(120, 22);
             this.productquantitynumeric.TabIndex = 55;

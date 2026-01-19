@@ -50,6 +50,7 @@
             this.Deletebtn = new System.Windows.Forms.Button();
             this.Updatebtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkinventorybtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -65,7 +66,7 @@
             this.restockbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.restockbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.restockbtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.restockbtn.Location = new System.Drawing.Point(12, 468);
+            this.restockbtn.Location = new System.Drawing.Point(8, 501);
             this.restockbtn.Name = "restockbtn";
             this.restockbtn.Size = new System.Drawing.Size(176, 46);
             this.restockbtn.TabIndex = 4;
@@ -83,7 +84,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.Control;
-            this.button7.Location = new System.Drawing.Point(12, 547);
+            this.button7.Location = new System.Drawing.Point(12, 357);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(172, 43);
             this.button7.TabIndex = 6;
@@ -101,7 +102,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(12, 389);
+            this.button2.Location = new System.Drawing.Point(8, 430);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(176, 46);
             this.button2.TabIndex = 7;
@@ -121,7 +122,7 @@
             this.wellb.Name = "wellb";
             this.wellb.Size = new System.Drawing.Size(0, 25);
             this.wellb.TabIndex = 1;
-            this.wellb.Click += new System.EventHandler(this.wellb_Click);
+           
             // 
             // label1
             // 
@@ -193,6 +194,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panel1.Controls.Add(this.checkinventorybtn);
             this.panel1.Controls.Add(this.historybtn);
             this.panel1.Controls.Add(this.Addwindowbtn);
             this.panel1.Controls.Add(this.button2);
@@ -207,6 +209,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 803);
             this.panel1.TabIndex = 11;
+           
             // 
             // historybtn
             // 
@@ -217,7 +220,7 @@
             this.historybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.historybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.historybtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.historybtn.Location = new System.Drawing.Point(12, 619);
+            this.historybtn.Location = new System.Drawing.Point(8, 579);
             this.historybtn.Name = "historybtn";
             this.historybtn.Size = new System.Drawing.Size(176, 46);
             this.historybtn.TabIndex = 13;
@@ -233,7 +236,7 @@
             this.Addwindowbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Addwindowbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Addwindowbtn.ForeColor = System.Drawing.Color.White;
-            this.Addwindowbtn.Location = new System.Drawing.Point(12, 305);
+            this.Addwindowbtn.Location = new System.Drawing.Point(8, 279);
             this.Addwindowbtn.Name = "Addwindowbtn";
             this.Addwindowbtn.Size = new System.Drawing.Size(176, 46);
             this.Addwindowbtn.TabIndex = 12;
@@ -274,7 +277,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(8, 710);
+            this.button1.Location = new System.Drawing.Point(8, 730);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 46);
             this.button1.TabIndex = 9;
@@ -385,6 +388,22 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // checkinventorybtn
+            // 
+            this.checkinventorybtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkinventorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkinventorybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkinventorybtn.ForeColor = System.Drawing.Color.White;
+            this.checkinventorybtn.Location = new System.Drawing.Point(8, 658);
+            this.checkinventorybtn.Name = "checkinventorybtn";
+            this.checkinventorybtn.Size = new System.Drawing.Size(176, 46);
+            this.checkinventorybtn.TabIndex = 14;
+            this.checkinventorybtn.Text = "Check Inventory";
+            this.checkinventorybtn.UseVisualStyleBackColor = true;
+            this.checkinventorybtn.Click += new System.EventHandler(this.checkinventorybtn_Click);
+            // 
             // ManagerMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -428,5 +447,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Addwindowbtn;
         private System.Windows.Forms.Button historybtn;
+        private System.Windows.Forms.Button checkinventorybtn;
     }
 }
