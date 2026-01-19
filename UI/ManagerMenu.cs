@@ -71,35 +71,35 @@ namespace UI
             DataTable dt = m.autorestock();
             if (dt.Rows.Count > 0)
             {
-                foreach(DataRow row in dt.Rows)
-                {  //1 more than restock amount will be purchased
-                    quantity = int.Parse(row["Restock_at"].ToString())+1-int.Parse(row["StockQuantity"].ToString());
-                    total += quantity * decimal.Parse(row["Price"].ToString());
-                }
-                    string note = "Created by system";
-                    int purchaseid=m.CreatePurchase(m.getSystemid(), total,note);
-                foreach(DataRow row in dt.Rows)
+                DialogResult result =MessageBox.Show("Inventory of some products are low. Create Restock Request","Caution", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
                 {
-                    unitPrice = decimal.Parse(row["Price"].ToString());
-                    int productid = int.Parse(row["ProductId"].ToString());
-                    try
-                    {
+                    MessageBox.Show("Request Created");
+                    foreach (DataRow row in dt.Rows)
+                    {  //1 more than restock amount will be purchased
                         quantity = int.Parse(row["Restock_at"].ToString()) + 1 - int.Parse(row["StockQuantity"].ToString());
-                        m.addProduct_Purchase(productid, quantity, unitPrice, purchaseid);
-                        m.updateProductStock(productid, quantity);
+                        total += quantity * decimal.Parse(row["Price"].ToString());
                     }
-                    catch(Exception ex)
+                    string note = "Created by system";
+                    int purchaseid = m.CreatePurchase(m.getSystemid(), total, note);
+                    foreach (DataRow row in dt.Rows)
                     {
-                        MessageBox.Show("Error Occured please try again");
+                        unitPrice = decimal.Parse(row["Price"].ToString());
+                        int productid = int.Parse(row["ProductId"].ToString());
+                        try
+                        {
+                            quantity = int.Parse(row["Restock_at"].ToString()) + 1 - int.Parse(row["StockQuantity"].ToString());
+                            m.addProduct_Purchase(productid, quantity, unitPrice, purchaseid);
+                            m.updateProductStock(productid, quantity);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error Occured please try again");
+                        }
                     }
                 }
             }
-            else
-            {
                
-                pf.Show();
-                this.Hide();
-            }
             pf.Show();
             this.Hide();
         }

@@ -9,7 +9,7 @@ namespace Service
 {
     public static class Sub_total_Calculation
     {
-       static decimal total = 0;
+        static decimal total = 0;
         public static decimal getTotal(DataTable temp)
         {
             foreach (DataRow row in temp.Rows)
