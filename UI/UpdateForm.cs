@@ -17,9 +17,9 @@ namespace UI
     public partial class UpdateForm : Form
     {
         ManagerRepository m;
-        Product pu;
-        int rowclicked;
-        string name = Service.CurrentUser.Username;
+        Product updateproduct;
+        int productclicked;
+      
         public UpdateForm()
         {
             InitializeComponent();
@@ -37,9 +37,6 @@ namespace UI
             productCatagoryCombobox.DataSource = m.getAllCatagories();
             productCatagoryCombobox.DisplayMember = "CatagoryName";
             productCatagoryCombobox.ValueMember = "CatagoryId";
-           
-          // availablecombobox.DataSource = m.getStatus(rowclicked);
-           // availablecombobox.ValueMember = "Status";
         }
        
         private void updatebtn_Click(object sender, EventArgs e)
@@ -55,17 +52,17 @@ namespace UI
                 int catid = int.Parse(productCatagoryCombobox.SelectedValue.ToString());
                 int restock = int.Parse(restocktb.Text.ToString());
                 string status = availablecombobox.Text;
-                pu = new Product(n, q, catid, p, restock, status);
+                updateproduct = new Product(n, q, catid, p, restock, status);
             }
             
-            if(m.updateProduct(rowclicked, pu) > 0)
+            if(m.updateProduct(productclicked, updateproduct) > 0)
             {
                 MessageBox.Show("Update Successfull");
                 loadAll();
             }
             else
             {
-                MessageBox.Show(rowclicked.ToString());
+                MessageBox.Show("Update Unsuccessfull", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -73,7 +70,7 @@ namespace UI
         {
             if (updatedatagridview.SelectedRows.Count > 0)
             {
-                rowclicked = int.Parse(updatedatagridview.SelectedRows[0].Cells["ProductId"].Value.ToString());
+                productclicked = int.Parse(updatedatagridview.SelectedRows[0].Cells["ProductId"].Value.ToString());
                 productNametb.Text = updatedatagridview.SelectedRows[0].Cells["ProductName"].Value.ToString();
                 productPricetb.Text = updatedatagridview.SelectedRows[0].Cells["Price"].Value.ToString();
                 productQuantitytb.Text = updatedatagridview.SelectedRows[0].Cells["StockQuantity"].Value.ToString();

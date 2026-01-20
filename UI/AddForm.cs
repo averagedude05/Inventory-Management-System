@@ -71,12 +71,13 @@ namespace UI
             }
             else if (char.IsDigit(productname[0]))
             {
-                MessageBox.Show("Product name can't start with number");
+                MessageBox.Show("Product name can't start with a number");
                 isValid = false;
             }
             else
             {
-                errorProvider.SetError(productNametb, "");
+                errorProvider.SetError(productNametb, ""); //Once SetError is triggered red exclamation mark stays attached to the textbox
+                                                           //until tell it to disappear so "" is used
             }
             if (string.IsNullOrEmpty(productQuantitytb.Text))
             {
