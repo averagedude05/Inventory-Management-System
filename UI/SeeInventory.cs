@@ -41,7 +41,7 @@ namespace UI
                 }
                 else
                 {
-                    MessageBox.Show("Product not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Product not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
             else
