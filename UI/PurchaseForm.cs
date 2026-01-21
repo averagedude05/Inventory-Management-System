@@ -174,7 +174,7 @@ namespace UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error Faced: " + ex.Message);
             }
         }
 
