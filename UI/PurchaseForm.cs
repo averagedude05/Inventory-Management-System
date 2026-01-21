@@ -103,7 +103,7 @@ namespace UI
            
             if(!int.TryParse(productquantitynumeric.Text,out qty))
             {
-                MessageBox.Show("Please choose quantity");
+                MessageBox.Show("Quantity can't be empty");
             }
             var unitprice = m.getUnitPrice(productId);
             if (unitprice != null)
