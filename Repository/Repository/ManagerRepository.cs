@@ -41,19 +41,18 @@ namespace Repository
         }
         public DataTable getAllProduct()
         {
-            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId" +
-                " order by  p.ProductId desc";
+            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId";
             var command = d.GetCommand(sql);
             return d.Execute(command);
             
         }
-        public DataTable getAllProdcutbydate()
-        {
-            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId" +
-                " order by  p.Updated_at desc";
-            var command = d.GetCommand(sql);
-            return d.Execute(command);
-        }
+        //public DataTable getAllProdcutbydate()
+        //{
+        //    var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId" +
+        //        " order by  p.Updated_at desc";
+        //    var command = d.GetCommand(sql);
+        //    return d.Execute(command);
+        //}
         public DataTable getAllProductDelete()
         {
             var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId where p.Status='Available'";
@@ -93,13 +92,14 @@ namespace Repository
         {
             var sql = "update Product set Price=@price, ProductName=@productname," +
                 " StockQuantity=@stockquantity, CatagoryId=@catagoryId, Updated_at=getdate(), " +
-                "Status=@status where ProductId=@id";
+                "Status=@status, Restock_at=@restock where ProductId=@id";
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@price", p.ProductPrice);
             command.Parameters.AddWithValue("@productname", p.ProductName);
             command.Parameters.AddWithValue("@stockquantity", p.ProductQuantity);
             command.Parameters.AddWithValue("@catagoryId", p.ProductCatagory);
             command.Parameters.AddWithValue("@status", p.Status);
+            command.Parameters.AddWithValue("@restock", p.Restock);
             command.Parameters.AddWithValue("@id",id);
 
             return d.ExecuteNonQuery(command);

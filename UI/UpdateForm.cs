@@ -33,7 +33,7 @@ namespace UI
        
         void loadAll()
         {
-            updatedatagridview.DataSource = m.getAllProdcutbydate();
+            updatedatagridview.DataSource = m.getAllProduct();
             productCatagoryCombobox.DataSource = m.getAllCatagories();
             productCatagoryCombobox.DisplayMember = "CatagoryName";
             productCatagoryCombobox.ValueMember = "CatagoryId";
