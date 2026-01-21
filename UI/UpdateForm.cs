@@ -33,7 +33,7 @@ namespace UI
        
         void loadAll()
         {
-            updatedatagridview.DataSource = m.getAllProduct();
+            updatedatagridview.DataSource = m.getAllProdcutbydate();
             productCatagoryCombobox.DataSource = m.getAllCatagories();
             productCatagoryCombobox.DisplayMember = "CatagoryName";
             productCatagoryCombobox.ValueMember = "CatagoryId";
@@ -53,17 +53,21 @@ namespace UI
                 int restock = int.Parse(restocktb.Text.ToString());
                 string status = availablecombobox.Text;
                 updateproduct = new Product(n, q, catid, p, restock, status);
-            }
-            
-            if(m.updateProduct(productclicked, updateproduct) > 0)
-            {
-                MessageBox.Show("Update Successfull");
-                loadAll();
+                if (m.updateProduct(productclicked, updateproduct) > 0)
+                {
+                    MessageBox.Show("Update Successfull");
+                    loadAll();
+                }
+                else
+                {
+                    MessageBox.Show("Update Unsuccessfull", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Update Unsuccessfull", "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
             }
+            
         }
 
         private void updatedatagridview_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -95,6 +99,15 @@ namespace UI
         private void FullNamelb_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void clearbtn_Click(object sender, EventArgs e)
+        {
+            productNametb.Text = "";
+            productPricetb.Text = "";
+            productQuantitytb.Text = "";
+            restocktb.Text = "";
+            productNametb.Text = "";
         }
     }
 }

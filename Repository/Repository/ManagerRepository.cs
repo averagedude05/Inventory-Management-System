@@ -41,10 +41,18 @@ namespace Repository
         }
         public DataTable getAllProduct()
         {
-            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId";
+            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId" +
+                " order by  p.ProductId desc";
             var command = d.GetCommand(sql);
             return d.Execute(command);
             
+        }
+        public DataTable getAllProdcutbydate()
+        {
+            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId" +
+                " order by  p.Updated_at desc";
+            var command = d.GetCommand(sql);
+            return d.Execute(command);
         }
         public DataTable getAllProductDelete()
         {
