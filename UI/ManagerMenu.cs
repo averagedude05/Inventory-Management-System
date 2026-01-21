@@ -71,10 +71,7 @@ namespace UI
             DataTable dt = m.autorestock();
             if (dt.Rows.Count > 0)
             {
-                DialogResult result =MessageBox.Show("Inventory of some products are low. Create Restock Request","Caution", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    MessageBox.Show("Request Created");
+
                     foreach (DataRow row in dt.Rows)
                     {  //1 more than restock amount will be purchased
                         quantity = int.Parse(row["Restock_at"].ToString()) + 1 - int.Parse(row["StockQuantity"].ToString());
@@ -98,7 +95,7 @@ namespace UI
                             MessageBox.Show("Error Occured please try again");
                         }
                     }
-                }
+                
             }
                
             pf.Show();
