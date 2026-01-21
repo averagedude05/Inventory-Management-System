@@ -119,28 +119,8 @@ namespace UI
             row["Sub Total"] = qty * price;
 
             showsubtotal.Text = $"৳ {qty} x {price}= {(qty * price).ToString()}";
-
-            bool found = false;
-
-            foreach (DataRow exist in temptable.Rows)
-            {
-                if (int.Parse(exist["Product Id"].ToString()) == productId)
-                {
-                    int currentquantity = int.Parse(exist["Quantity"].ToString());
-                    int newquantity = currentquantity + qty;
-
-                    exist["Quantity"] = newquantity;
-                    exist["Sub Total"] = newquantity * price;
-
-                    found = true;
-                    
-                }
-            }
-
-            if (!found)
-            {
-                temptable.Rows.Add(row);
-            }
+            temptable.Rows.Add(row);
+            
             showsubtotal.Text = $"৳ {qty} x {price} = {qty * price}";
             purchasedataGridView.DataSource = temptable;
         }
