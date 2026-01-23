@@ -166,7 +166,7 @@ namespace UI
                         qty = int.Parse(row["Quantity"].ToString());
                         price = decimal.Parse(row["Unit Price"].ToString());
                         m.addProduct_Purchase(productId, qty, price, purchaseId);
-                        m.updateProductStock(productId, qty);
+                        m.restockProduct(productId, qty);
                     }
                 MessageBox.Show("Purchase Successfull");
 

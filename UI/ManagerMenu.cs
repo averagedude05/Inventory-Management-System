@@ -88,7 +88,7 @@ namespace UI
                         {
                             quantity = int.Parse(row["Restock_at"].ToString()) + 1 - int.Parse(row["StockQuantity"].ToString());
                             m.addProduct_Purchase(productid, quantity, unitPrice, purchaseid);
-                            m.updateProductStock(productid, quantity);
+                            m.restockProduct(productid, quantity);
                         }
                         catch (Exception ex)
                         {
@@ -117,7 +117,7 @@ namespace UI
             { 
                 Form1 login = new Form1();
                 login.Show();
-                this.Dispose();
+                this.Close();
             }
         }
 

@@ -141,18 +141,17 @@ namespace Repository
         }
         public DataTable getFullPurchaseHistory()
         {
-            var sql = @"select p.PurchaseId, u.UserName, pr.ProductName, pp.Quantity, pp.UnitPrice, 
-                (pp.Quantity * pp.UnitPrice) as SubTotal, p.TotalAmount, p.PurchaseDate, p.Notes
-                from Purchase p 
-                join Product_Purchase pp ON p.PurchaseId = pp.PurchaseId 
-                join Product pr ON pp.ProductId = pr.ProductId 
-                join Users u ON p.UserId = u.UserId 
-                order by p.PurchaseId desc";
-
+           var sql = "select pp.ProductPurchaseId, p.PurchaseId, pr.ProductId, u.UserName, pr.ProductName, pp.Quantity, pp.UnitPrice, " +
+              "(pp.Quantity * pp.UnitPrice) as SubTotal, p.TotalAmount, p.PurchaseDate, p.Notes " +
+              "from Purchase p " +
+              "join Product_Purchase pp ON p.PurchaseId = pp.PurchaseId " +
+              "join Product pr ON pp.ProductId = pr.ProductId " +
+              "join Users u ON p.UserId = u.UserId " +
+              "order by p.PurchaseId desc";
             var command = d.GetCommand(sql);
             return d.Execute(command);
         }
-        public int updateProductStock(int productId, int qty)
+        public int restockProduct(int productId, int qty)
         {
             var sql = "update product set StockQuantity = StockQuantity + @Qty WHERE ProductId = @ProductId";
             var command = d.GetCommand(sql);
@@ -160,7 +159,14 @@ namespace Repository
             command.Parameters.AddWithValue("@ProductId", productId);
             return d.ExecuteNonQuery(command);
         }
-
+        public int updateRestockDel(int productid, int qty)
+        {
+            var sql = "update Product set StockQuantity = StockQuantity - @Qty WHERE ProductId = @ProductId";
+            var command = d.GetCommand(sql);
+            command.Parameters.AddWithValue("@Qty", qty);
+            command.Parameters.AddWithValue("@ProductId", productid);
+            return d.ExecuteNonQuery(command);
+        }
         public int getSystemid()
         {
             var sql = "select UserId from Users where Username='system'";
@@ -189,6 +195,13 @@ namespace Repository
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@name", "%" + name + "%");
             return d.Execute(command);
+        }
+        public int deleteProductPurchase(int id)
+        {
+            var sql = "delete from Product_Purchase where ProductPurchaseId=@id";
+            var command = d.GetCommand(sql);
+            command.Parameters.AddWithValue("@id", id);
+            return d.ExecuteNonQuery(command);
         }
 
     }
