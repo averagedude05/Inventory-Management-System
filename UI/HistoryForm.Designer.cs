@@ -57,7 +57,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1163, 415);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // panel1
             // 
@@ -129,9 +128,10 @@
             // 
             // deletebtn
             // 
-            this.deletebtn.Location = new System.Drawing.Point(698, 536);
+            this.deletebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletebtn.Location = new System.Drawing.Point(698, 528);
             this.deletebtn.Name = "deletebtn";
-            this.deletebtn.Size = new System.Drawing.Size(75, 23);
+            this.deletebtn.Size = new System.Drawing.Size(101, 31);
             this.deletebtn.TabIndex = 17;
             this.deletebtn.Text = "Delete";
             this.deletebtn.UseVisualStyleBackColor = true;

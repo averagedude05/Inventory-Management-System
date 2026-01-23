@@ -1,4 +1,5 @@
 ﻿using Repository;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,9 @@ namespace UI
     {
         ManagerRepository m=new ManagerRepository();
         DataTable dt;
+        int productpurhcaseid;
+        int productid;
+        int qty;
         public HistoryForm()
         {
             InitializeComponent();
@@ -54,18 +58,14 @@ namespace UI
             this.Hide();
         }
 
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-        }
-
         private void deletebtn_Click(object sender, EventArgs e)
         {
-
+           
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                int productpurhcaseid = int.Parse(dataGridView1.SelectedRows[0].Cells["ProductPurchaseId"].Value.ToString());
-                int productid = int.Parse(dataGridView1.SelectedRows[0].Cells["ProductId"].Value.ToString());
-                int qty = int.Parse(dataGridView1.SelectedRows[0].Cells["Quantity"].Value.ToString());
+                productpurhcaseid = int.Parse(dataGridView1.SelectedRows[0].Cells["ProductPurchaseId"].Value.ToString());
+                productid = int.Parse(dataGridView1.SelectedRows[0].Cells["ProductId"].Value.ToString());
+                qty = int.Parse(dataGridView1.SelectedRows[0].Cells["Quantity"].Value.ToString());
                 DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
@@ -75,6 +75,7 @@ namespace UI
                         {
                             
                             dt.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                            m.updateRestockDel(productid, qty);
                             MessageBox.Show("Delete Successfull");
                         }
 
