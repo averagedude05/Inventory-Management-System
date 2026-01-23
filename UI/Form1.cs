@@ -52,8 +52,8 @@ namespace UI
                 else if (user.UserRole.ToLower() == "manager")
                 {
                     ManagerMenu m = new ManagerMenu(this);
-                    this.Hide();
                     m.Show();
+                    this.Hide();
                     nametb.Text = " ";
                     passtb.Text = " ";
                 }
