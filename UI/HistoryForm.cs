@@ -49,6 +49,7 @@ namespace UI
             dataGridView1.DataSource = dt;
             dataGridView1.Columns["PurchaseId"].Visible = false;
             dataGridView1.Columns["ProductPurchaseId"].Visible = false;
+            dataGridView1.Columns["ProductId"].Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
