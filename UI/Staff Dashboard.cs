@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI;
+
 
 namespace Staff_Part
 {
@@ -73,10 +75,11 @@ namespace Staff_Part
                 Session.FullName = "";
                 Session.Role = "";
 
-                // Go back to login
-                // this.Hide();
-                // Login login = new Login();
-                // login.Show();
+                
+                 
+                Form1 f = new Form1();
+                f.Show();
+               
             }
         }
     }
