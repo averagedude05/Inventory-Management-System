@@ -14,16 +14,17 @@ namespace Service
         public string UserPhone { get; set; }
         public string Full_Name { get; set; }
         public int UserId { get; private set; }
-        public User(string name, string role, int id,string phn, string fn)
+        public string Status { get; set; }
+        public User(string name, string role, int id,string phn, string fn, string status)
         {
             UserName = name;
             UserRole = role;
             UserId = id;
             UserPhone = phn;
             Full_Name = fn;
-
+            Status = status;
         }
-        
+
     }
    
 }

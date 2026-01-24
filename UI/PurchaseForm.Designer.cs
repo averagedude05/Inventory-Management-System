@@ -106,9 +106,9 @@
             // 
             // Removebtn
             // 
-            this.Removebtn.Location = new System.Drawing.Point(366, 710);
+            this.Removebtn.Location = new System.Drawing.Point(366, 697);
             this.Removebtn.Name = "Removebtn";
-            this.Removebtn.Size = new System.Drawing.Size(75, 23);
+            this.Removebtn.Size = new System.Drawing.Size(112, 36);
             this.Removebtn.TabIndex = 58;
             this.Removebtn.Text = "Remove";
             this.Removebtn.UseVisualStyleBackColor = true;
@@ -116,9 +116,9 @@
             // 
             // addbtn
             // 
-            this.addbtn.Location = new System.Drawing.Point(137, 711);
+            this.addbtn.Location = new System.Drawing.Point(137, 697);
             this.addbtn.Name = "addbtn";
-            this.addbtn.Size = new System.Drawing.Size(75, 23);
+            this.addbtn.Size = new System.Drawing.Size(114, 37);
             this.addbtn.TabIndex = 57;
             this.addbtn.Text = "Add";
             this.addbtn.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 584);
+            this.label1.Location = new System.Drawing.Point(44, 516);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 16);
             this.label1.TabIndex = 62;
@@ -246,7 +246,7 @@
             // 
             // notetb
             // 
-            this.notetb.Location = new System.Drawing.Point(54, 633);
+            this.notetb.Location = new System.Drawing.Point(47, 563);
             this.notetb.Multiline = true;
             this.notetb.Name = "notetb";
             this.notetb.Size = new System.Drawing.Size(233, 76);
@@ -254,9 +254,9 @@
             // 
             // confirmbtn
             // 
-            this.confirmbtn.Location = new System.Drawing.Point(54, 427);
+            this.confirmbtn.Location = new System.Drawing.Point(187, 699);
             this.confirmbtn.Name = "confirmbtn";
-            this.confirmbtn.Size = new System.Drawing.Size(75, 23);
+            this.confirmbtn.Size = new System.Drawing.Size(108, 37);
             this.confirmbtn.TabIndex = 60;
             this.confirmbtn.Text = "Confirm";
             this.confirmbtn.UseVisualStyleBackColor = true;

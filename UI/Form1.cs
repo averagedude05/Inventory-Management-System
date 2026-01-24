@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Repository;
 using Service;
+using Staff_Part;
 
 namespace UI
 {
@@ -16,11 +17,6 @@ namespace UI
         {
             InitializeComponent();
             manager = new ManagerRepository();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void nametb_TextChanged(object sender, EventArgs e)
@@ -52,7 +48,7 @@ namespace UI
                     this.Hide();
 
                 }
-                else if (user.UserRole.ToLower() == "manager")
+                else if (user.UserRole.ToLower() == "manager"&&user.Status=="Active")
                 {
                     ManagerMenu m = new ManagerMenu(this);
                     m.Show();
@@ -60,9 +56,14 @@ namespace UI
                     nametb.Text = " ";
                     passtb.Text = " ";
                 }
-                else if (user.UserRole.ToLower() == "sales")
+                else if (user.UserRole.ToLower() == "sales" && user.Status == "Active")
                 {
-                    MessageBox.Show("Manager");
+                    Dashboard s = new Dashboard();
+                    s.Show();
+                    this.Hide();
+                    nametb.Text = " ";
+                    passtb.Text = " ";
+
                 }
             }
             

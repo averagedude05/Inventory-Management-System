@@ -23,7 +23,7 @@ namespace Repository
             if (datatable.Rows.Count > 0)
             {
                 DataRow row = datatable.Rows[0];
-                return new User(row["UserName"].ToString(), row["Role"].ToString(), int.Parse(row["UserId"].ToString()), row["UserPhone"].ToString(), row["Full_name"].ToString());
+                return new User(row["UserName"].ToString(), row["Role"].ToString(), int.Parse(row["UserId"].ToString()), row["UserPhone"].ToString(), row["Full_name"].ToString(), row["Status"].ToString());
             }
             return null;
 
@@ -42,7 +42,7 @@ namespace Repository
         }
         public DataTable getAllProduct()
         {
-            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId";
+            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName from Product p join Catagory c on p.CatagoryId = c.CatagoryId";
             var command = d.GetCommand(sql);
             return d.Execute(command);
 
@@ -50,7 +50,7 @@ namespace Repository
 
         public DataTable getAllProductDelete()
         {
-            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId where p.Status='Available'";
+            var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName from Product p join Catagory c on p.CatagoryId = c.CatagoryId where p.Status='Available'";
             var command = d.GetCommand(sql);
             return d.Execute(command);
 
@@ -109,7 +109,7 @@ namespace Repository
         }
         public DataTable getSelectedProduct(int id)
         {
-            var sql = "select p.ProductId, p.ProductName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId" +
+            var sql = "select p.ProductId, p.ProductName from Product p join Catagory c on p.CatagoryId = c.CatagoryId" +
                 " where p.CatagoryId=@id and p.Status='Available'";
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@id", id);
@@ -145,9 +145,9 @@ namespace Repository
             var sql = "select pp.ProductPurchaseId, p.PurchaseId, pr.ProductId, u.UserName, pr.ProductName, pp.Quantity, pp.UnitPrice, " +
                "(pp.Quantity * pp.UnitPrice) as SubTotal, p.TotalAmount, p.PurchaseDate, p.Notes " +
                "from Purchase p " +
-               "join Product_Purchase pp ON p.PurchaseId = pp.PurchaseId " +
-               "join Product pr ON pp.ProductId = pr.ProductId " +
-               "join Users u ON p.UserId = u.UserId " +
+               "join Product_Purchase pp on p.PurchaseId = pp.PurchaseId " +
+               "join Product pr on pp.ProductId = pr.ProductId " +
+               "join Users u on p.UserId = u.UserId " +
                "order by p.PurchaseId desc";
             var command = d.GetCommand(sql);
             return d.Execute(command);
@@ -191,7 +191,7 @@ namespace Repository
         {
             var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, " +
                 "p.Created_at, p.Updated_at, P.Status, c.CatagoryName " +
-                "FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId " +
+                "from Product p join Catagory c on p.CatagoryId = c.CatagoryId " +
                 "where p.ProductName like @name";
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@name", "%" + name + "%");
