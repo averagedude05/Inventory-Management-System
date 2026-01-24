@@ -45,25 +45,24 @@ namespace UI
             if (user != null)
             {
                 CurrentUser.getCurrentUser(user);
-                if (user.UserRole == "admin")
+                if (user.UserRole.ToLower() == "admin")
                 {
-                    MessageBox.Show("welcome admin");
+                    admin_Dash a = new admin_Dash(Service.CurrentUser.Username,Service.CurrentUser.Id.ToString());
+                    a.Show();
+                    this.Hide();
+
                 }
                 else if (user.UserRole.ToLower() == "manager")
                 {
                     ManagerMenu m = new ManagerMenu(this);
-                    this.Hide();
                     m.Show();
+                    this.Hide();
                     nametb.Text = " ";
                     passtb.Text = " ";
                 }
                 else if (user.UserRole.ToLower() == "sales")
                 {
-                    ManagerMenu m = new ManagerMenu(this);
-                    this.Hide();
-                    m.Show();
-                    nametb.Text = " ";
-                    passtb.Text = " ";
+                    MessageBox.Show("Manager");
                 }
             }
             

@@ -73,13 +73,10 @@ namespace UI
 
         }
         private void productnamecombobox_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-         
+        { 
             showpricelb.Text = "0";
             showsubtotal.Text = "0";
             productquantitynumeric.Text = "0";
-
         }
         void createTempTable()
         {
@@ -90,6 +87,8 @@ namespace UI
             temptable.Columns.Add("Sub Total", typeof(decimal));
 
             purchasedataGridView.DataSource = temptable;
+            purchasedataGridView.ReadOnly = true;
+
         }
 
         private void purchasedataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -102,15 +101,15 @@ namespace UI
             productId = int.Parse(productnamecombobox.SelectedValue.ToString());
             productName = productnamecombobox.Text;
            
-            
-
             if(!int.TryParse(productquantitynumeric.Text,out qty))
             {
-                MessageBox.Show("Quantity can't be 0");
+                MessageBox.Show("Quantity can't be empty");
             }
-            var v = m.getUnitPrice(productId);
-            if (v != null)
-                price = decimal.Parse(v);
+            var unitprice = m.getUnitPrice(productId);
+            if (unitprice != null)
+            {
+                price = decimal.Parse(unitprice);
+            }
             showpricelb.Text = "৳ " + price.ToString();
             DataRow row = temptable.NewRow();
             row["Product Id"] = productId;
@@ -118,13 +117,12 @@ namespace UI
             row["Quantity"] = qty;
             row["Unit Price"] = price;
             row["Sub Total"] = qty * price;
-            showsubtotal.Text = $"৳ {qty} x {price}={(qty * price).ToString()}";
-            
 
+            showsubtotal.Text = $"৳ {qty} x {price}= {(qty * price).ToString()}";
             temptable.Rows.Add(row);
             
+            showsubtotal.Text = $"৳ {qty} x {price} = {qty * price}";
             purchasedataGridView.DataSource = temptable;
-           
         }
 
         private void Removebtn_Click(object sender, EventArgs e)
@@ -167,10 +165,8 @@ namespace UI
                         productId = int.Parse(row["Product Id"].ToString());
                         qty = int.Parse(row["Quantity"].ToString());
                         price = decimal.Parse(row["Unit Price"].ToString());
-
-
                         m.addProduct_Purchase(productId, qty, price, purchaseId);
-                        m.updateProductStock(productId, qty);
+                        m.restockProduct(productId, qty);
                     }
                 MessageBox.Show("Purchase Successfull");
 
@@ -178,7 +174,7 @@ namespace UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error Faced: " + ex.Message);
             }
         }
 

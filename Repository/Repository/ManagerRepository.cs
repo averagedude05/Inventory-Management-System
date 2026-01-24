@@ -20,7 +20,8 @@ namespace Repository
             command.Parameters.AddWithValue("@Name", name);
             command.Parameters.AddWithValue("@Password", pass);
             var datatable = d.Execute(command);//returns the data table
-            if (datatable.Rows.Count > 0) {
+            if (datatable.Rows.Count > 0)
+            {
                 DataRow row = datatable.Rows[0];
                 return new User(row["UserName"].ToString(), row["Role"].ToString(), int.Parse(row["UserId"].ToString()), row["UserPhone"].ToString(), row["Full_name"].ToString());
             }
@@ -30,22 +31,23 @@ namespace Repository
         public int AddProduct(Product p)
         {
             var sql = "insert into Product(Price,ProductName,StockQuantity,CatagoryId,Restock_at) values(@Price,@ProductName,@StockQuantity,@CatagoryId,@Restock)";
-            var command = d.GetCommand(sql); 
-            command.Parameters.AddWithValue("@ProductName",p.ProductName);
+            var command = d.GetCommand(sql);
+            command.Parameters.AddWithValue("@ProductName", p.ProductName);
             command.Parameters.AddWithValue("@Price", p.ProductPrice);
             command.Parameters.AddWithValue("@StockQuantity", p.ProductQuantity);
             command.Parameters.AddWithValue("@CatagoryId", p.ProductCatagory);
             command.Parameters.AddWithValue("@Restock", p.Restock);
             return d.ExecuteNonQuery(command);
-         
+
         }
         public DataTable getAllProduct()
         {
             var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId";
             var command = d.GetCommand(sql);
             return d.Execute(command);
-            
+
         }
+
         public DataTable getAllProductDelete()
         {
             var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName FROM Product p JOIN Catagory c ON p.CatagoryId = c.CatagoryId where p.Status='Available'";
@@ -61,7 +63,7 @@ namespace Repository
             DataTable dt = d.Execute(command);
             if (dt.Rows.Count > 0)
             {
-                return dt.Rows[0]["Price"].ToString(); 
+                return dt.Rows[0]["Price"].ToString();
             }
             return null;
         }
@@ -73,7 +75,7 @@ namespace Repository
             var command = d.GetCommand(sql);
             return d.Execute(command);
         }
-    
+
         public int deleteProduct(int id)
         {
             var sql = "update Product set Status= 'UnAvailable' where ProductId=@ProductId";
@@ -85,19 +87,20 @@ namespace Repository
         {
             var sql = "update Product set Price=@price, ProductName=@productname," +
                 " StockQuantity=@stockquantity, CatagoryId=@catagoryId, Updated_at=getdate(), " +
-                "Status=@status where ProductId=@id";
+                "Status=@status, Restock_at=@restock where ProductId=@id";
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@price", p.ProductPrice);
             command.Parameters.AddWithValue("@productname", p.ProductName);
             command.Parameters.AddWithValue("@stockquantity", p.ProductQuantity);
             command.Parameters.AddWithValue("@catagoryId", p.ProductCatagory);
             command.Parameters.AddWithValue("@status", p.Status);
-            command.Parameters.AddWithValue("@id",id);
+            command.Parameters.AddWithValue("@restock", p.Restock);
+            command.Parameters.AddWithValue("@id", id);
 
             return d.ExecuteNonQuery(command);
-           
+
         }
-       
+
         public DataTable getAllProduct_Purchase()
         {
             var sql = "select * from Product_Purchase ";
@@ -113,7 +116,7 @@ namespace Repository
             return d.Execute(command);
 
         }
-        public int CreatePurchase(int id, decimal total,string n)
+        public int CreatePurchase(int id, decimal total, string n)
         {
             var sql = "insert into Purchase(UserId,TotalAmount,Status, Notes)" +
                 " values (@id, @total, 'Complete', @n); " +
@@ -125,7 +128,7 @@ namespace Repository
             DataTable dt = d.Execute(command);
             return int.Parse(dt.Rows[0][0].ToString());
         }
-        
+
         public int addProduct_Purchase(int productid, int q, decimal unit, int purchaseid)
         {
             var sql = "insert into Product_Purchase(ProductId,PurchaseId,Quantity,UnitPrice) " +
@@ -139,18 +142,17 @@ namespace Repository
         }
         public DataTable getFullPurchaseHistory()
         {
-            var sql = @"select p.PurchaseId, u.UserName, pr.ProductName, pp.Quantity, pp.UnitPrice, 
-                (pp.Quantity * pp.UnitPrice) as SubTotal, p.TotalAmount, p.PurchaseDate, p.Notes
-                from Purchase p 
-                join Product_Purchase pp ON p.PurchaseId = pp.PurchaseId 
-                join Product pr ON pp.ProductId = pr.ProductId 
-                join Users u ON p.UserId = u.UserId 
-                order by p.PurchaseId desc";
-
+            var sql = "select pp.ProductPurchaseId, p.PurchaseId, pr.ProductId, u.UserName, pr.ProductName, pp.Quantity, pp.UnitPrice, " +
+               "(pp.Quantity * pp.UnitPrice) as SubTotal, p.TotalAmount, p.PurchaseDate, p.Notes " +
+               "from Purchase p " +
+               "join Product_Purchase pp ON p.PurchaseId = pp.PurchaseId " +
+               "join Product pr ON pp.ProductId = pr.ProductId " +
+               "join Users u ON p.UserId = u.UserId " +
+               "order by p.PurchaseId desc";
             var command = d.GetCommand(sql);
             return d.Execute(command);
         }
-        public int updateProductStock(int productId, int qty)
+        public int restockProduct(int productId, int qty)
         {
             var sql = "update product set StockQuantity = StockQuantity + @Qty WHERE ProductId = @ProductId";
             var command = d.GetCommand(sql);
@@ -158,7 +160,14 @@ namespace Repository
             command.Parameters.AddWithValue("@ProductId", productId);
             return d.ExecuteNonQuery(command);
         }
-
+        public int updateRestockDel(int productid, int qty)
+        {
+            var sql = "update Product set StockQuantity = StockQuantity - @Qty WHERE ProductId = @ProductId";
+            var command = d.GetCommand(sql);
+            command.Parameters.AddWithValue("@Qty", qty);
+            command.Parameters.AddWithValue("@ProductId", productid);
+            return d.ExecuteNonQuery(command);
+        }
         public int getSystemid()
         {
             var sql = "select UserId from Users where Username='system'";
@@ -187,6 +196,13 @@ namespace Repository
             var command = d.GetCommand(sql);
             command.Parameters.AddWithValue("@name", "%" + name + "%");
             return d.Execute(command);
+        }
+        public int deleteProductPurchase(int id)
+        {
+            var sql = "delete from Product_Purchase where ProductPurchaseId=@id";
+            var command = d.GetCommand(sql);
+            command.Parameters.AddWithValue("@id", id);
+            return d.ExecuteNonQuery(command);
         }
 
     }

@@ -67,7 +67,7 @@ namespace UI
                     int id = int.Parse(deleteGrid.SelectedRows[0].Cells["ProductId"].Value.ToString());
                     if (m.deleteProduct(id) > 0)
                     {
-                       // deleteGrid.SelectedRows[0].Visible = false;
+                       
                         loadAll();
                         MessageBox.Show("Delete Successfull");
                     }

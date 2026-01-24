@@ -49,6 +49,7 @@
             this.catagorylb = new System.Windows.Forms.Label();
             this.availablelb = new System.Windows.Forms.Label();
             this.availablecombobox = new System.Windows.Forms.ComboBox();
+            this.clearbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.updatedatagridview)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -123,9 +124,9 @@
             // 
             // updatebtn
             // 
-            this.updatebtn.Location = new System.Drawing.Point(465, 712);
+            this.updatebtn.Location = new System.Drawing.Point(615, 699);
             this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(75, 23);
+            this.updatebtn.Size = new System.Drawing.Size(118, 38);
             this.updatebtn.TabIndex = 10;
             this.updatebtn.Text = "Update";
             this.updatebtn.UseVisualStyleBackColor = true;
@@ -253,12 +254,23 @@
             this.availablecombobox.Size = new System.Drawing.Size(121, 24);
             this.availablecombobox.TabIndex = 19;
             // 
+            // clearbtn
+            // 
+            this.clearbtn.Location = new System.Drawing.Point(842, 699);
+            this.clearbtn.Name = "clearbtn";
+            this.clearbtn.Size = new System.Drawing.Size(118, 38);
+            this.clearbtn.TabIndex = 21;
+            this.clearbtn.Text = "Clear";
+            this.clearbtn.UseVisualStyleBackColor = true;
+            this.clearbtn.Click += new System.EventHandler(this.clearbtn_Click);
+            // 
             // UpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1400, 765);
+            this.Controls.Add(this.clearbtn);
             this.Controls.Add(this.availablelb);
             this.Controls.Add(this.availablecombobox);
             this.Controls.Add(this.label1);
@@ -308,5 +320,6 @@
         private System.Windows.Forms.Label catagorylb;
         private System.Windows.Forms.Label availablelb;
         private System.Windows.Forms.ComboBox availablecombobox;
+        private System.Windows.Forms.Button clearbtn;
     }
 }
