@@ -227,18 +227,5 @@
       <Name>Service</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="image\21250411_6425463.png" />
-    <Content Include="image\add.png" />
-    <Content Include="image\purchase.png" />
-    <None Include="image\top_blu.png" />
-    <None Include="image\search.png" />
-    <None Include="image\sales.png" />
-    <None Include="image\profile.ico" />
-    <None Include="image\login_logo.png" />
-    <None Include="image\inventory.png" />
-    <None Include="image\employee.png" />
-    <None Include="image\back_24px.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
