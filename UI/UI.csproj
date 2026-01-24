@@ -52,6 +52,24 @@
     <Compile Include="AddForm.Designer.cs">
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="admin\admin_Dash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\admin_Dash.Designer.cs">
+      <DependentUpon>admin_Dash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin\employee_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\employee_Admin.Designer.cs">
+      <DependentUpon>employee_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin\inventory_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\inventory_Admin.Designer.cs">
+      <DependentUpon>inventory_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeleteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +117,15 @@
     <EmbeddedResource Include="AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="admin\admin_Dash.resx">
+      <DependentUpon>admin_Dash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\employee_Admin.resx">
+      <DependentUpon>employee_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\inventory_Admin.resx">
+      <DependentUpon>inventory_Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeleteForm.resx">
       <DependentUpon>DeleteForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,13 +140,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="PurchaseForm.resx">
       <DependentUpon>PurchaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,7 +181,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pics\" />
+    <Content Include="image\21250411_6425463.png" />
+    <Content Include="image\add.png" />
+    <Content Include="image\purchase.png" />
+    <None Include="image\top_blu.png" />
+    <None Include="image\search.png" />
+    <None Include="image\sales.png" />
+    <None Include="image\profile.ico" />
+    <None Include="image\login_logo.png" />
+    <None Include="image\inventory.png" />
+    <None Include="image\employee.png" />
+    <None Include="image\back_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
