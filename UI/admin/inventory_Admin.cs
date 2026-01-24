@@ -28,7 +28,7 @@ namespace UI
             PopulateGridView();
 
         }
-        private void PopulateGridView(string sql = "select * from [dbo].[productTabledgv];")
+        private void PopulateGridView(string sql = "select * from [dbo].[Product];")
         {
             this.Dt = this.Da.Execute(sql);
             this.grid_Inventory.AutoGenerateColumns = false;

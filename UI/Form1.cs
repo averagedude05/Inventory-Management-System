@@ -34,7 +34,7 @@ namespace UI
             string username = nametb.Text.ToLower().Trim();
             string userpass = passtb.Text.ToLower().Trim();
             user = manager.Verify(username, userpass);
-            if (user == null)
+            if (user == null || user.Status=="Inactive")
             {
                 MessageBox.Show("No user found");
             }
