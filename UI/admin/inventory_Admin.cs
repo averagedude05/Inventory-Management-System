@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class inventory_Admin : Form
+    public partial class inventory_Admin :Form
     {
         private DataAccess Da { get; set; }
         private DataSet Ds { get; set; }
         private string Sql { get; set; }
         private DataTable Dt { get; set; }
-        private bool newAvailableID = true;
+     
 
         public inventory_Admin()
         {
@@ -28,7 +28,7 @@ namespace UI
             PopulateGridView();
 
         }
-        private void PopulateGridView(string sql = "select * from [dbo].[Product];")
+        private void PopulateGridView(string sql = "select * from [dbo].[productTabledgv];")
         {
             this.Dt = this.Da.Execute(sql);
             this.grid_Inventory.AutoGenerateColumns = false;

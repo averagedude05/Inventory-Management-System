@@ -20,12 +20,13 @@ namespace Repository
             command.Parameters.AddWithValue("@Name", name);
             command.Parameters.AddWithValue("@Password", pass);
             var datatable = d.Execute(command);//returns the data table
-            if (datatable.Rows.Count > 0)
+            if  (datatable.Rows.Count > 0)
             {
                 DataRow row = datatable.Rows[0];
                 return new User(row["UserName"].ToString(), row["Role"].ToString(), int.Parse(row["UserId"].ToString()), row["UserPhone"].ToString(), row["Full_name"].ToString(), row["Status"].ToString());
             }
-            return null;
+            else return null;
+            
 
         }
         public int AddProduct(Product p)

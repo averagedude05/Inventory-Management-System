@@ -26,9 +26,7 @@ namespace Repository
 
             if (IsUserExist(empUserName) > 0) return 3;
 
-            string insertSql = @"INSERT INTO Users
-                        (UserName, UserPhone, UserPassword, Role, Full_name, Status)
-                        VALUES (@UserName, @UserPhone, @UserPassword, @Role, @Full_name, 'Active');";
+            string insertSql = @"INSERT INTO Users (UserName, UserPhone, UserPassword, Role, Full_name, Status) VALUES (@UserName, @UserPhone, @UserPassword, @Role, @Full_name, 'Active');";
 
             SqlCommand cmd = d.GetCommand(insertSql);
             cmd.Parameters.AddWithValue("@Full_name", empName);

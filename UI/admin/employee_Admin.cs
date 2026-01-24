@@ -107,7 +107,7 @@ namespace UI
                 int flag = userRepo.AddUser(empID, empName, empPhone, empUserName, empRole, empPassword);
 
                 if (flag == 1) { MessageBox.Show("Please fill in all required fields."); return; }
-                if(flag==2) { MessageBox.Show("Phone number must be numeric and 11 digits"); return; }
+                if (flag==2) { MessageBox.Show("Phone number must be numeric and 11 digits"); return; }
                 if (flag == 3) { MessageBox.Show("Username already exists. Please choose a different username."); return; }
                 if (flag == 4)
                 {
@@ -155,7 +155,7 @@ namespace UI
                     }
                     else
                     {
-                        MessageBox.Show("No user was deleted. The user may have already been removed.");
+                        MessageBox.Show("No user was deleted. ");
                     }
 
                 }
