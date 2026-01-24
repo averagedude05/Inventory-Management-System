@@ -46,7 +46,6 @@ namespace UI
 
             if (result == DialogResult.Yes)
             {
-
                 try
                 {
                     string n = productNametb.Text;
@@ -72,6 +71,7 @@ namespace UI
                     MessageBox.Show("Please fill all fields", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
+
 
             }
         }
