@@ -18,6 +18,7 @@ namespace Staff_Part
         {
             InitializeComponent();
             this.saleId = saleId;
+            label2.Text = Service.CurrentUser.UserFullName;
         }
 
         private void Receipt_Load(object sender, EventArgs e)
@@ -53,7 +54,7 @@ namespace Staff_Part
                         label4.Text = dr["SaleId"].ToString();
                         label3.Text = Convert.ToDateTime(dr["Sale_date"]).ToString("dd-MM-yyyy HH:mm");
                         label5.Text = dr["Total"].ToString();
-                        label2.Text = Session.FullName;
+                       // label2.Text = Session.FullName;
                     }
                 }
             }

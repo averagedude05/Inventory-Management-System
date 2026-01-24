@@ -38,6 +38,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkinventorybtn = new System.Windows.Forms.Button();
             this.historybtn = new System.Windows.Forms.Button();
             this.Addwindowbtn = new System.Windows.Forms.Button();
             this.wlclb = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.Deletebtn = new System.Windows.Forms.Button();
             this.Updatebtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkinventorybtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -122,7 +122,6 @@
             this.wellb.Name = "wellb";
             this.wellb.Size = new System.Drawing.Size(0, 25);
             this.wellb.TabIndex = 1;
-           
             // 
             // label1
             // 
@@ -209,7 +208,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 803);
             this.panel1.TabIndex = 11;
-           
+            // 
+            // checkinventorybtn
+            // 
+            this.checkinventorybtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkinventorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkinventorybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkinventorybtn.ForeColor = System.Drawing.Color.White;
+            this.checkinventorybtn.Location = new System.Drawing.Point(8, 658);
+            this.checkinventorybtn.Name = "checkinventorybtn";
+            this.checkinventorybtn.Size = new System.Drawing.Size(176, 46);
+            this.checkinventorybtn.TabIndex = 14;
+            this.checkinventorybtn.Text = "Check Inventory";
+            this.checkinventorybtn.UseVisualStyleBackColor = true;
+            this.checkinventorybtn.Click += new System.EventHandler(this.checkinventorybtn_Click);
             // 
             // historybtn
             // 
@@ -252,7 +266,7 @@
             this.wlclb.AutoSize = true;
             this.wlclb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wlclb.ForeColor = System.Drawing.SystemColors.Control;
-            this.wlclb.Location = new System.Drawing.Point(51, 208);
+            this.wlclb.Location = new System.Drawing.Point(8, 220);
             this.wlclb.Name = "wlclb";
             this.wlclb.Size = new System.Drawing.Size(53, 20);
             this.wlclb.TabIndex = 11;
@@ -387,22 +401,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // checkinventorybtn
-            // 
-            this.checkinventorybtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkinventorybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkinventorybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkinventorybtn.ForeColor = System.Drawing.Color.White;
-            this.checkinventorybtn.Location = new System.Drawing.Point(8, 658);
-            this.checkinventorybtn.Name = "checkinventorybtn";
-            this.checkinventorybtn.Size = new System.Drawing.Size(176, 46);
-            this.checkinventorybtn.TabIndex = 14;
-            this.checkinventorybtn.Text = "Check Inventory";
-            this.checkinventorybtn.UseVisualStyleBackColor = true;
-            this.checkinventorybtn.Click += new System.EventHandler(this.checkinventorybtn_Click);
             // 
             // ManagerMenu
             // 

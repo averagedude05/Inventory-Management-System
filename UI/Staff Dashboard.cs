@@ -19,8 +19,8 @@ namespace Staff_Part
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            StaffNameLabel.Text =  Session.FullName;
-            RoleLabel.Text = Session.Role;
+            StaffNameLabel.Text = Service.CurrentUser.UserFullName;
+
         }
 
         private void label2_Click(object sender, EventArgs e)

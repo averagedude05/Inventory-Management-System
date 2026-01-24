@@ -100,7 +100,7 @@
             this.productNamelb.AutoSize = true;
             this.productNamelb.Location = new System.Drawing.Point(346, 389);
             this.productNamelb.Name = "productNamelb";
-            this.productNamelb.Size = new System.Drawing.Size(98, 17);
+            this.productNamelb.Size = new System.Drawing.Size(93, 16);
             this.productNamelb.TabIndex = 6;
             this.productNamelb.Text = "Product Name";
             // 
@@ -109,7 +109,7 @@
             this.productQuantitylb.AutoSize = true;
             this.productQuantitylb.Location = new System.Drawing.Point(786, 389);
             this.productQuantitylb.Name = "productQuantitylb";
-            this.productQuantitylb.Size = new System.Drawing.Size(114, 17);
+            this.productQuantitylb.Size = new System.Drawing.Size(104, 16);
             this.productQuantitylb.TabIndex = 7;
             this.productQuantitylb.Text = "Product Quantity";
             // 
@@ -118,7 +118,7 @@
             this.productPricelb.AutoSize = true;
             this.productPricelb.Location = new System.Drawing.Point(352, 511);
             this.productPricelb.Name = "productPricelb";
-            this.productPricelb.Size = new System.Drawing.Size(93, 17);
+            this.productPricelb.Size = new System.Drawing.Size(87, 16);
             this.productPricelb.TabIndex = 8;
             this.productPricelb.Text = "Product Price";
             // 
@@ -166,7 +166,7 @@
             this.FullNamelb.ForeColor = System.Drawing.SystemColors.Control;
             this.FullNamelb.Location = new System.Drawing.Point(30, 219);
             this.FullNamelb.Name = "FullNamelb";
-            this.FullNamelb.Size = new System.Drawing.Size(60, 24);
+            this.FullNamelb.Size = new System.Drawing.Size(58, 22);
             this.FullNamelb.TabIndex = 11;
             this.FullNamelb.Text = "label1";
             this.FullNamelb.Click += new System.EventHandler(this.FullNamelb_Click);
@@ -176,7 +176,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 10;
             // 
             // label3
@@ -206,7 +206,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(352, 598);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 17);
+            this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 18;
             this.label1.Text = "Restock Level";
             // 
@@ -230,7 +230,7 @@
             this.catagorylb.AutoSize = true;
             this.catagorylb.Location = new System.Drawing.Point(786, 511);
             this.catagorylb.Name = "catagorylb";
-            this.catagorylb.Size = new System.Drawing.Size(65, 17);
+            this.catagorylb.Size = new System.Drawing.Size(62, 16);
             this.catagorylb.TabIndex = 9;
             this.catagorylb.Text = "Catagory";
             // 
@@ -239,7 +239,7 @@
             this.availablelb.AutoSize = true;
             this.availablelb.Location = new System.Drawing.Point(786, 593);
             this.availablelb.Name = "availablelb";
-            this.availablelb.Size = new System.Drawing.Size(77, 17);
+            this.availablelb.Size = new System.Drawing.Size(75, 16);
             this.availablelb.TabIndex = 20;
             this.availablelb.Text = "Availablility";
             // 

@@ -115,7 +115,5 @@ namespace UI
             restocktb.Text = "";
             productNametb.Text = "";
         }
-
-        
     }
 }

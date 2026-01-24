@@ -44,7 +44,7 @@ namespace Staff_Part
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(852, 402);
+            this.dataGridView1.Size = new System.Drawing.Size(1381, 616);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel1
@@ -54,7 +54,7 @@ namespace Staff_Part
             this.panel1.ForeColor = System.Drawing.Color.Coral;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(852, 62);
+            this.panel1.Size = new System.Drawing.Size(1396, 62);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -72,7 +72,7 @@ namespace Staff_Part
             this.Backbtn.BackColor = System.Drawing.Color.Red;
             this.Backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Backbtn.ForeColor = System.Drawing.Color.White;
-            this.Backbtn.Location = new System.Drawing.Point(12, 479);
+            this.Backbtn.Location = new System.Drawing.Point(3, 693);
             this.Backbtn.Name = "Backbtn";
             this.Backbtn.Size = new System.Drawing.Size(147, 44);
             this.Backbtn.TabIndex = 2;
@@ -84,7 +84,7 @@ namespace Staff_Part
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 545);
+            this.ClientSize = new System.Drawing.Size(1400, 765);
             this.Controls.Add(this.Backbtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);

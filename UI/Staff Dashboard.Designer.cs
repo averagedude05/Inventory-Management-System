@@ -48,19 +48,18 @@ namespace Staff_Part
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(779, 75);
+            this.panel1.Size = new System.Drawing.Size(1397, 75);
             this.panel1.TabIndex = 0;
             // 
             // RoleLabel
             // 
             this.RoleLabel.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RoleLabel.ForeColor = System.Drawing.Color.White;
-            this.RoleLabel.Location = new System.Drawing.Point(681, 25);
+            this.RoleLabel.Location = new System.Drawing.Point(925, 38);
             this.RoleLabel.Name = "RoleLabel";
             this.RoleLabel.Size = new System.Drawing.Size(70, 20);
             this.RoleLabel.TabIndex = 2;
             this.RoleLabel.Text = "Role";
-            this.RoleLabel.Click += new System.EventHandler(this.RoleLabel_Click);
             // 
             // StaffNameLabel
             // 
@@ -70,7 +69,6 @@ namespace Staff_Part
             this.StaffNameLabel.Name = "StaffNameLabel";
             this.StaffNameLabel.Size = new System.Drawing.Size(144, 40);
             this.StaffNameLabel.TabIndex = 1;
-            this.StaffNameLabel.Text = "StaffName";
             // 
             // label1
             // 
@@ -87,7 +85,7 @@ namespace Staff_Part
             this.ViewProductbtn.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.ViewProductbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewProductbtn.ForeColor = System.Drawing.Color.White;
-            this.ViewProductbtn.Location = new System.Drawing.Point(114, 160);
+            this.ViewProductbtn.Location = new System.Drawing.Point(232, 187);
             this.ViewProductbtn.Name = "ViewProductbtn";
             this.ViewProductbtn.Size = new System.Drawing.Size(197, 69);
             this.ViewProductbtn.TabIndex = 1;
@@ -100,7 +98,7 @@ namespace Staff_Part
             this.CreateSalebtn.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.CreateSalebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateSalebtn.ForeColor = System.Drawing.Color.White;
-            this.CreateSalebtn.Location = new System.Drawing.Point(439, 160);
+            this.CreateSalebtn.Location = new System.Drawing.Point(557, 187);
             this.CreateSalebtn.Name = "CreateSalebtn";
             this.CreateSalebtn.Size = new System.Drawing.Size(178, 69);
             this.CreateSalebtn.TabIndex = 2;
@@ -113,7 +111,7 @@ namespace Staff_Part
             this.SalesHistorybtn.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.SalesHistorybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesHistorybtn.ForeColor = System.Drawing.Color.White;
-            this.SalesHistorybtn.Location = new System.Drawing.Point(114, 295);
+            this.SalesHistorybtn.Location = new System.Drawing.Point(232, 322);
             this.SalesHistorybtn.Name = "SalesHistorybtn";
             this.SalesHistorybtn.Size = new System.Drawing.Size(197, 69);
             this.SalesHistorybtn.TabIndex = 3;
@@ -126,7 +124,7 @@ namespace Staff_Part
             this.Logoutbtn.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.Logoutbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Logoutbtn.ForeColor = System.Drawing.Color.White;
-            this.Logoutbtn.Location = new System.Drawing.Point(439, 295);
+            this.Logoutbtn.Location = new System.Drawing.Point(557, 322);
             this.Logoutbtn.Name = "Logoutbtn";
             this.Logoutbtn.Size = new System.Drawing.Size(178, 69);
             this.Logoutbtn.TabIndex = 4;
@@ -138,7 +136,7 @@ namespace Staff_Part
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(780, 487);
+            this.ClientSize = new System.Drawing.Size(1066, 543);
             this.Controls.Add(this.Logoutbtn);
             this.Controls.Add(this.SalesHistorybtn);
             this.Controls.Add(this.CreateSalebtn);
