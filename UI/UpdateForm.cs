@@ -38,7 +38,7 @@ namespace UI
             productCatagoryCombobox.DisplayMember = "CatagoryName";
             productCatagoryCombobox.ValueMember = "CatagoryId";
         }
-       
+
         private void updatebtn_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to Update?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -46,28 +46,34 @@ namespace UI
 
             if (result == DialogResult.Yes)
             {
-                string n = productNametb.Text;
-                decimal p = decimal.Parse(productPricetb.Text);
-                int q = int.Parse(productQuantitytb.Text);
-                int catid = int.Parse(productCatagoryCombobox.SelectedValue.ToString());
-                int restock = int.Parse(restocktb.Text.ToString());
-                string status = availablecombobox.Text;
-                updateproduct = new Product(n, q, catid, p, restock, status);
-                if (m.updateProduct(productclicked, updateproduct) > 0)
+
+                try
                 {
-                    MessageBox.Show("Update Successfull");
-                    loadAll();
+                    string n = productNametb.Text;
+                    decimal p = decimal.Parse(productPricetb.Text);
+                    int q = int.Parse(productQuantitytb.Text);
+                    int catid = int.Parse(productCatagoryCombobox.SelectedValue.ToString());
+                    int restock = int.Parse(restocktb.Text.ToString());
+                    string status = availablecombobox.Text;
+                    updateproduct = new Product(n, q, catid, p, restock, status);
+                    if (m.updateProduct(productclicked, updateproduct) > 0)
+                    {
+                        MessageBox.Show("Update Successfull");
+                        loadAll();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Update Unsuccessfull", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Update Unsuccessfull", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please fill all fields", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 }
+
             }
-            else
-            {
-                return;
-            }
-            
         }
 
         private void updatedatagridview_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

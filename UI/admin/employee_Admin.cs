@@ -20,14 +20,14 @@ namespace UI
         private DataSet Ds { get; set; }
         private string Sql { get; set; }
         private DataTable Dt { get; set; }
-        private ManagerRepository managerRepo { get; set; }
+        private UserRepository userRepo { get; set; }
         
         public employee_Admin()
         {
 
             InitializeComponent();
             this.Da = new DataAccess();
-            managerRepo = new ManagerRepository();
+            userRepo = new UserRepository();
             PopulateGridView();
             GenerateUserID();
             txtbox_empUser.ReadOnly = false;
@@ -48,7 +48,7 @@ namespace UI
         private void GenerateUserID()
         {
             
-            this.txtbox_empID.Text = managerRepo.GenerateUserID();
+            this.txtbox_empID.Text = userRepo.GenerateUserID();
         }
 
         private void PopulateGridView(string sql = "select * from Users;")
@@ -104,7 +104,7 @@ namespace UI
                 string empPassword = this.txtbox_empPass.Text?.Trim();
                 string empRole = this.cmbox_role.Text?.Trim();
 
-                int flag = managerRepo.AddUser(empID, empName, empPhone, empUserName, empRole, empPassword);
+                int flag = userRepo.AddUser(empID, empName, empPhone, empUserName, empRole, empPassword);
 
                 if (flag == 1) { MessageBox.Show("Please fill in all required fields."); return; }
                 if(flag==2) { MessageBox.Show("Phone number must be numeric and 11 digits"); return; }
@@ -135,7 +135,7 @@ namespace UI
 
                 // Get the UserID from the selected row
                 string userID = grid_User.CurrentRow.Cells["UserID"].Value?.ToString();
-                string userName = grid_User.CurrentRow.Cells["FullName"].Value?.ToString();
+                string userName = grid_User.CurrentRow.Cells["Full_name"].Value?.ToString();
 
                 if (string.IsNullOrWhiteSpace(userID))
                 {
@@ -147,7 +147,7 @@ namespace UI
 
                 if (result == DialogResult.Yes)
                 {
-                    if (managerRepo.deleteUser(userID))
+                    if (userRepo.DeleteUser(userID))
                     {
                         MessageBox.Show("User deleted successfully.");
                         PopulateGridView(); // Refresh the grid
@@ -178,8 +178,7 @@ namespace UI
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
-            txtbox_empUser.ReadOnly = true;
-            txtbox_empPass.ReadOnly = true;
+          
             try
             {
                 if (this.txtbox_empID.ReadOnly && !string.IsNullOrWhiteSpace(this.txtbox_empID.Text))
@@ -190,7 +189,7 @@ namespace UI
                     string empUserName = this.txtbox_empUser.Text?.Trim();
                     string empRole = this.cmbox_role.Text?.Trim();
 
-                    int flag = managerRepo.updateUser(userID, empName, empPhone, empUserName, empRole);
+                    int flag = userRepo.UpdateUser(userID, empName, empPhone, empUserName, empRole);
 
                     if (flag == 1)
                     {
@@ -216,8 +215,7 @@ namespace UI
             {
                 MessageBox.Show("Error updating user: " + ex.Message);
             }
-            txtbox_empUser.ReadOnly = false;
-            txtbox_empPass.ReadOnly = false;
+           
         }
 
 
@@ -228,6 +226,9 @@ namespace UI
 
         private void grid_User_DoubleClick(object sender, EventArgs e)
         {
+            txtbox_empUser.ReadOnly = true;
+            txtbox_empPass.ReadOnly = true;
+           
             if (grid_User.CurrentRow != null)
             {
                 try
