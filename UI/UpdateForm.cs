@@ -68,7 +68,7 @@ namespace UI
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Please fill all fields", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please fill all fields.", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
 
