@@ -49,7 +49,7 @@ namespace UI
         void loadAll()
         {
             
-                productdatagridview.DataSource = m.getAllProductDelete();
+                productdatagridview.DataSource = m.getAllProductNotDelete();
 
                 productCatagoryCombobox.DataSource = m.getAllCatagories();
                 productCatagoryCombobox.DisplayMember = "CatagoryName";
@@ -143,6 +143,7 @@ namespace UI
             if (purchasedataGridView.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select one");
+                return;
             }
             else
             {

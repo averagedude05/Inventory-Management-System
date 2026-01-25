@@ -49,7 +49,7 @@ namespace Repository
 
         }
 
-        public DataTable getAllProductDelete()
+        public DataTable getAllProductNotDelete()
         {
             var sql = "select p.ProductId, p.ProductName, p.Price, p.StockQuantity, p.Restock_at, p.Created_at, p.Updated_at, P.Status, c.CatagoryName from Product p join Catagory c on p.CatagoryId = c.CatagoryId where p.Status='Available'";
             var command = d.GetCommand(sql);

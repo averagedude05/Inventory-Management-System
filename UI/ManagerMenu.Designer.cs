@@ -226,7 +226,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ManagerMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inventory Management System";
+            this.Text = "7";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

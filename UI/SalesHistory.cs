@@ -93,6 +93,8 @@ namespace Staff_Part
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+            Dashboard d = new Dashboard();
+            d.Show();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
