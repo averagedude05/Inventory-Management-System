@@ -48,9 +48,11 @@
             this.seealldatagridview.AllowUserToDeleteRows = false;
             this.seealldatagridview.AllowUserToResizeColumns = false;
             this.seealldatagridview.AllowUserToResizeRows = false;
+            this.seealldatagridview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.seealldatagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.seealldatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.seealldatagridview.Location = new System.Drawing.Point(260, 12);
+            this.seealldatagridview.Location = new System.Drawing.Point(225, 3);
             this.seealldatagridview.Name = "seealldatagridview";
             this.seealldatagridview.RowHeadersWidth = 51;
             this.seealldatagridview.RowTemplate.Height = 24;
@@ -60,11 +62,11 @@
             // searchtb
             // 
             this.searchtb.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchtb.Location = new System.Drawing.Point(683, 539);
             this.searchtb.MaximumSize = new System.Drawing.Size(500, 500);
             this.searchtb.Name = "searchtb";
-            this.searchtb.Size = new System.Drawing.Size(183, 28);
+            this.searchtb.Size = new System.Drawing.Size(275, 34);
             this.searchtb.TabIndex = 1;
             // 
             // panel1
@@ -85,7 +87,7 @@
             this.FullNamelb.AutoSize = true;
             this.FullNamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FullNamelb.ForeColor = System.Drawing.SystemColors.Control;
-            this.FullNamelb.Location = new System.Drawing.Point(18, 254);
+            this.FullNamelb.Location = new System.Drawing.Point(3, 255);
             this.FullNamelb.Name = "FullNamelb";
             this.FullNamelb.Size = new System.Drawing.Size(53, 20);
             this.FullNamelb.TabIndex = 13;
@@ -93,12 +95,13 @@
             // 
             // backbtn
             // 
+            this.backbtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backbtn.ForeColor = System.Drawing.Color.White;
-            this.backbtn.Location = new System.Drawing.Point(12, 676);
+            this.backbtn.Location = new System.Drawing.Point(3, 690);
             this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(185, 44);
+            this.backbtn.Size = new System.Drawing.Size(216, 44);
             this.backbtn.TabIndex = 12;
             this.backbtn.Text = "Move to Main Menu";
             this.backbtn.UseVisualStyleBackColor = true;
@@ -114,8 +117,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(23, 29);
             this.pictureBox2.Name = "pictureBox2";
@@ -127,7 +129,7 @@
             // searchbtn
             // 
             this.searchbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbtn.Location = new System.Drawing.Point(567, 539);
+            this.searchbtn.Location = new System.Drawing.Point(564, 545);
             this.searchbtn.Name = "searchbtn";
             this.searchbtn.Size = new System.Drawing.Size(91, 29);
             this.searchbtn.TabIndex = 49;
@@ -146,7 +148,7 @@
             this.Controls.Add(this.seealldatagridview);
             this.Name = "SeeInventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SeeInventory";
+            this.Text = "Inventory Mangement System, Search Product";
             this.Load += new System.EventHandler(this.SeeInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.seealldatagridview)).EndInit();
             this.panel1.ResumeLayout(false);

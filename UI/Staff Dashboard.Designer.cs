@@ -30,7 +30,6 @@ namespace Staff_Part
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.RoleLabel = new System.Windows.Forms.Label();
             this.StaffNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ViewProductbtn = new System.Windows.Forms.Button();
@@ -43,23 +42,12 @@ namespace Staff_Part
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel1.Controls.Add(this.RoleLabel);
             this.panel1.Controls.Add(this.StaffNameLabel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1397, 75);
             this.panel1.TabIndex = 0;
-            // 
-            // RoleLabel
-            // 
-            this.RoleLabel.Font = new System.Drawing.Font("Microsoft PhagsPa", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RoleLabel.ForeColor = System.Drawing.Color.White;
-            this.RoleLabel.Location = new System.Drawing.Point(925, 38);
-            this.RoleLabel.Name = "RoleLabel";
-            this.RoleLabel.Size = new System.Drawing.Size(70, 20);
-            this.RoleLabel.TabIndex = 2;
-            this.RoleLabel.Text = "Role";
             // 
             // StaffNameLabel
             // 
@@ -82,10 +70,11 @@ namespace Staff_Part
             // 
             // ViewProductbtn
             // 
+            this.ViewProductbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ViewProductbtn.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.ViewProductbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewProductbtn.ForeColor = System.Drawing.Color.White;
-            this.ViewProductbtn.Location = new System.Drawing.Point(232, 187);
+            this.ViewProductbtn.Location = new System.Drawing.Point(266, 180);
             this.ViewProductbtn.Name = "ViewProductbtn";
             this.ViewProductbtn.Size = new System.Drawing.Size(197, 69);
             this.ViewProductbtn.TabIndex = 1;
@@ -95,10 +84,11 @@ namespace Staff_Part
             // 
             // CreateSalebtn
             // 
+            this.CreateSalebtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CreateSalebtn.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.CreateSalebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateSalebtn.ForeColor = System.Drawing.Color.White;
-            this.CreateSalebtn.Location = new System.Drawing.Point(557, 187);
+            this.CreateSalebtn.Location = new System.Drawing.Point(591, 180);
             this.CreateSalebtn.Name = "CreateSalebtn";
             this.CreateSalebtn.Size = new System.Drawing.Size(178, 69);
             this.CreateSalebtn.TabIndex = 2;
@@ -108,10 +98,11 @@ namespace Staff_Part
             // 
             // SalesHistorybtn
             // 
+            this.SalesHistorybtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SalesHistorybtn.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.SalesHistorybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesHistorybtn.ForeColor = System.Drawing.Color.White;
-            this.SalesHistorybtn.Location = new System.Drawing.Point(232, 322);
+            this.SalesHistorybtn.Location = new System.Drawing.Point(266, 315);
             this.SalesHistorybtn.Name = "SalesHistorybtn";
             this.SalesHistorybtn.Size = new System.Drawing.Size(197, 69);
             this.SalesHistorybtn.TabIndex = 3;
@@ -121,10 +112,11 @@ namespace Staff_Part
             // 
             // Logoutbtn
             // 
+            this.Logoutbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Logoutbtn.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.Logoutbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Logoutbtn.ForeColor = System.Drawing.Color.White;
-            this.Logoutbtn.Location = new System.Drawing.Point(557, 322);
+            this.Logoutbtn.Location = new System.Drawing.Point(591, 315);
             this.Logoutbtn.Name = "Logoutbtn";
             this.Logoutbtn.Size = new System.Drawing.Size(178, 69);
             this.Logoutbtn.TabIndex = 4;
@@ -136,7 +128,8 @@ namespace Staff_Part
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1066, 543);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1400, 765);
             this.Controls.Add(this.Logoutbtn);
             this.Controls.Add(this.SalesHistorybtn);
             this.Controls.Add(this.CreateSalebtn);
@@ -145,7 +138,7 @@ namespace Staff_Part
             this.MaximizeBox = false;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "7";
+            this.Text = "Inventory Management System, Sales Dashboard";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -155,7 +148,6 @@ namespace Staff_Part
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label RoleLabel;
         private System.Windows.Forms.Label StaffNameLabel;
         private System.Windows.Forms.Button ViewProductbtn;
         private System.Windows.Forms.Button CreateSalebtn;

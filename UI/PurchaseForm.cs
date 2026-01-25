@@ -62,7 +62,9 @@ namespace UI
            
             int categoryId;
             if (!int.TryParse(productCatagoryCombobox.SelectedValue.ToString(), out categoryId))
+            {
                 return;
+            }
 
             productnamecombobox.DataSource = m.getSelectedProduct(categoryId);
             productnamecombobox.DisplayMember = "ProductName";
@@ -70,6 +72,7 @@ namespace UI
             showpricelb.Text = "0";
             showsubtotal.Text = "0";
             productquantitynumeric.Text = "0";
+            
 
         }
         private void productnamecombobox_SelectedValueChanged(object sender, EventArgs e)
@@ -98,12 +101,22 @@ namespace UI
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            productId = int.Parse(productnamecombobox.SelectedValue.ToString());
+            if(!int.TryParse(productnamecombobox.SelectedValue.ToString(),out productId))
+            {
+               
+                return;
+            }
+            if (string.IsNullOrEmpty(productnamecombobox.Text))
+            {
+                MessageBox.Show("Select a product", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             productName = productnamecombobox.Text;
-           
-            if(!int.TryParse(productquantitynumeric.Text,out qty))
+
+            if (!int.TryParse(productquantitynumeric.Text, out qty)|| productquantitynumeric.Text=="0")
             {
                 MessageBox.Show("Quantity can't be empty");
+                return;
             }
             var unitprice = m.getUnitPrice(productId);
             if (unitprice != null)
@@ -118,11 +131,11 @@ namespace UI
             row["Unit Price"] = price;
             row["Sub Total"] = qty * price;
 
-            showsubtotal.Text = $"৳ {qty} x {price}= {(qty * price).ToString()}";
             temptable.Rows.Add(row);
             
             showsubtotal.Text = $"৳ {qty} x {price} = {qty * price}";
             purchasedataGridView.DataSource = temptable;
+            
         }
 
         private void Removebtn_Click(object sender, EventArgs e)
@@ -146,8 +159,10 @@ namespace UI
         {
             try
             {
-                if (temptable.Rows.Count == 0) 
+                if (temptable.Rows.Count == 0)
+                {
                     return;
+                }
                 note = notetb.Text;
                 total = Service.Sub_total_Calculation.getTotal(temptable);
 
@@ -174,7 +189,7 @@ namespace UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Faced: " + ex.Message);
+                MessageBox.Show("Something went wrong" + ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

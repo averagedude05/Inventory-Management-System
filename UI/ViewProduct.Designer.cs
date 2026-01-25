@@ -39,6 +39,8 @@ namespace Staff_Part
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 71);
             this.dataGridView1.Name = "dataGridView1";
@@ -69,6 +71,7 @@ namespace Staff_Part
             // 
             // Backbtn
             // 
+            this.Backbtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Backbtn.BackColor = System.Drawing.Color.Red;
             this.Backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Backbtn.ForeColor = System.Drawing.Color.White;

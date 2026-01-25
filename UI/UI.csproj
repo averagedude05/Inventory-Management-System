@@ -227,5 +227,8 @@
       <Name>Service</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pictures\concept-of-product-inventory-management-warehouse-management-management-of-incoming-and-outgoing-goods-inventory-control-logistics-services-warehouse-employees-keep-deliver.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

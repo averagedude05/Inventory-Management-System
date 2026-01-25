@@ -60,6 +60,8 @@
             this.dgvloadproduct.AllowUserToDeleteRows = false;
             this.dgvloadproduct.AllowUserToResizeColumns = false;
             this.dgvloadproduct.AllowUserToResizeRows = false;
+            this.dgvloadproduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvloadproduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvloadproduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvloadproduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -74,9 +76,11 @@
             // 
             // clearbtn
             // 
+            this.clearbtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.clearbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearbtn.Location = new System.Drawing.Point(739, 677);
             this.clearbtn.Name = "clearbtn";
-            this.clearbtn.Size = new System.Drawing.Size(146, 48);
+            this.clearbtn.Size = new System.Drawing.Size(158, 48);
             this.clearbtn.TabIndex = 45;
             this.clearbtn.Text = "Clear";
             this.clearbtn.UseVisualStyleBackColor = true;
@@ -84,14 +88,17 @@
             // 
             // catagorycombo
             // 
+            this.catagorycombo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.catagorycombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.catagorycombo.FormattingEnabled = true;
             this.catagorycombo.Location = new System.Drawing.Point(837, 551);
             this.catagorycombo.Name = "catagorycombo";
-            this.catagorycombo.Size = new System.Drawing.Size(104, 24);
+            this.catagorycombo.Size = new System.Drawing.Size(176, 26);
             this.catagorycombo.TabIndex = 44;
             // 
             // savebtn
             // 
+            this.savebtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.savebtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.savebtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.savebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -106,6 +113,7 @@
             // 
             // productCatagorylb
             // 
+            this.productCatagorylb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.productCatagorylb.AutoSize = true;
             this.productCatagorylb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productCatagorylb.Location = new System.Drawing.Point(662, 553);
@@ -116,6 +124,7 @@
             // 
             // productQuantitylb
             // 
+            this.productQuantitylb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.productQuantitylb.AutoSize = true;
             this.productQuantitylb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productQuantitylb.Location = new System.Drawing.Point(302, 559);
@@ -126,9 +135,10 @@
             // 
             // productPricelb
             // 
+            this.productPricelb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.productPricelb.AutoSize = true;
             this.productPricelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productPricelb.Location = new System.Drawing.Point(662, 402);
+            this.productPricelb.Location = new System.Drawing.Point(823, 402);
             this.productPricelb.Name = "productPricelb";
             this.productPricelb.Size = new System.Drawing.Size(118, 22);
             this.productPricelb.TabIndex = 41;
@@ -136,6 +146,7 @@
             // 
             // productNamelb
             // 
+            this.productNamelb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.productNamelb.AutoSize = true;
             this.productNamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productNamelb.Location = new System.Drawing.Point(302, 402);
@@ -146,6 +157,7 @@
             // 
             // productQuantitytb
             // 
+            this.productQuantitytb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.productQuantitytb.Location = new System.Drawing.Point(479, 551);
             this.productQuantitytb.MinimumSize = new System.Drawing.Size(4, 30);
             this.productQuantitytb.Name = "productQuantitytb";
@@ -154,7 +166,8 @@
             // 
             // productPricttb
             // 
-            this.productPricttb.Location = new System.Drawing.Point(818, 394);
+            this.productPricttb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.productPricttb.Location = new System.Drawing.Point(979, 394);
             this.productPricttb.MinimumSize = new System.Drawing.Size(4, 30);
             this.productPricttb.Name = "productPricttb";
             this.productPricttb.Size = new System.Drawing.Size(123, 22);
@@ -162,17 +175,20 @@
             // 
             // productNametb
             // 
+            this.productNametb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.productNametb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productNametb.Location = new System.Drawing.Point(479, 394);
             this.productNametb.MinimumSize = new System.Drawing.Size(4, 30);
             this.productNametb.Name = "productNametb";
-            this.productNametb.Size = new System.Drawing.Size(123, 22);
+            this.productNametb.Size = new System.Drawing.Size(215, 28);
             this.productNametb.TabIndex = 37;
             // 
             // Restocklb
             // 
+            this.Restocklb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Restocklb.AutoSize = true;
             this.Restocklb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Restocklb.Location = new System.Drawing.Point(973, 553);
+            this.Restocklb.Location = new System.Drawing.Point(1049, 553);
             this.Restocklb.Name = "Restocklb";
             this.Restocklb.Size = new System.Drawing.Size(97, 22);
             this.Restocklb.TabIndex = 48;
@@ -180,7 +196,8 @@
             // 
             // restocktb
             // 
-            this.restocktb.Location = new System.Drawing.Point(1120, 551);
+            this.restocktb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.restocktb.Location = new System.Drawing.Point(1196, 551);
             this.restocktb.MinimumSize = new System.Drawing.Size(4, 30);
             this.restocktb.Name = "restocktb";
             this.restocktb.Size = new System.Drawing.Size(123, 22);
@@ -188,8 +205,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(23, 29);
             this.pictureBox2.Name = "pictureBox2";
@@ -200,6 +216,8 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
@@ -218,12 +236,13 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 676);
+            this.button1.Location = new System.Drawing.Point(7, 709);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 44);
+            this.button1.Size = new System.Drawing.Size(212, 44);
             this.button1.TabIndex = 12;
             this.button1.Text = "Move to Main Menu";
             this.button1.UseVisualStyleBackColor = true;
@@ -244,10 +263,11 @@
             // 
             // FullNamelb
             // 
+            this.FullNamelb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.FullNamelb.AutoSize = true;
             this.FullNamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FullNamelb.ForeColor = System.Drawing.SystemColors.Control;
-            this.FullNamelb.Location = new System.Drawing.Point(18, 254);
+            this.FullNamelb.Location = new System.Drawing.Point(3, 255);
             this.FullNamelb.Name = "FullNamelb";
             this.FullNamelb.Size = new System.Drawing.Size(53, 20);
             this.FullNamelb.TabIndex = 13;

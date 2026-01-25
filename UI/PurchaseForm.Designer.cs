@@ -67,6 +67,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.showsubtotal);
             this.panel1.Controls.Add(this.showpricelb);
             this.panel1.Controls.Add(this.Removebtn);
@@ -83,7 +85,7 @@
             this.panel1.Controls.Add(this.productQuantitylb);
             this.panel1.Location = new System.Drawing.Point(217, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(716, 763);
+            this.panel1.Size = new System.Drawing.Size(725, 763);
             this.panel1.TabIndex = 0;
             // 
             // showsubtotal
@@ -106,9 +108,11 @@
             // 
             // Removebtn
             // 
-            this.Removebtn.Location = new System.Drawing.Point(366, 697);
+            this.Removebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Removebtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.Removebtn.Location = new System.Drawing.Point(366, 690);
             this.Removebtn.Name = "Removebtn";
-            this.Removebtn.Size = new System.Drawing.Size(112, 36);
+            this.Removebtn.Size = new System.Drawing.Size(139, 43);
             this.Removebtn.TabIndex = 58;
             this.Removebtn.Text = "Remove";
             this.Removebtn.UseVisualStyleBackColor = true;
@@ -116,9 +120,11 @@
             // 
             // addbtn
             // 
-            this.addbtn.Location = new System.Drawing.Point(137, 697);
+            this.addbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbtn.Location = new System.Drawing.Point(137, 690);
             this.addbtn.Name = "addbtn";
-            this.addbtn.Size = new System.Drawing.Size(114, 37);
+            this.addbtn.Size = new System.Drawing.Size(134, 44);
             this.addbtn.TabIndex = 57;
             this.addbtn.Text = "Add";
             this.addbtn.UseVisualStyleBackColor = true;
@@ -139,12 +145,14 @@
             this.productdatagridview.AllowUserToDeleteRows = false;
             this.productdatagridview.AllowUserToResizeColumns = false;
             this.productdatagridview.AllowUserToResizeRows = false;
+            this.productdatagridview.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.productdatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productdatagridview.Location = new System.Drawing.Point(12, 66);
+            this.productdatagridview.Location = new System.Drawing.Point(6, 66);
             this.productdatagridview.Name = "productdatagridview";
             this.productdatagridview.RowHeadersWidth = 51;
             this.productdatagridview.RowTemplate.Height = 24;
-            this.productdatagridview.Size = new System.Drawing.Size(688, 238);
+            this.productdatagridview.Size = new System.Drawing.Size(710, 238);
             this.productdatagridview.TabIndex = 56;
             this.productdatagridview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productdatagridview_CellContentClick);
             // 
@@ -163,27 +171,30 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(33, 425);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 16);
+            this.label3.Size = new System.Drawing.Size(124, 22);
             this.label3.TabIndex = 54;
             this.label3.Text = "Product Name";
             // 
             // productnamecombobox
             // 
+            this.productnamecombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productnamecombobox.FormattingEnabled = true;
             this.productnamecombobox.Location = new System.Drawing.Point(211, 422);
             this.productnamecombobox.Name = "productnamecombobox";
-            this.productnamecombobox.Size = new System.Drawing.Size(121, 24);
+            this.productnamecombobox.Size = new System.Drawing.Size(194, 28);
             this.productnamecombobox.TabIndex = 52;
             this.productnamecombobox.SelectedValueChanged += new System.EventHandler(this.productnamecombobox_SelectedValueChanged);
             // 
             // catagorylb
             // 
             this.catagorylb.AutoSize = true;
+            this.catagorylb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.catagorylb.Location = new System.Drawing.Point(33, 343);
             this.catagorylb.Name = "catagorylb";
-            this.catagorylb.Size = new System.Drawing.Size(62, 16);
+            this.catagorylb.Size = new System.Drawing.Size(83, 22);
             this.catagorylb.TabIndex = 51;
             this.catagorylb.Text = "Catagory";
             // 
@@ -199,54 +210,61 @@
             // subtotallb
             // 
             this.subtotallb.AutoSize = true;
+            this.subtotallb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtotallb.Location = new System.Drawing.Point(41, 634);
             this.subtotallb.Name = "subtotallb";
-            this.subtotallb.Size = new System.Drawing.Size(62, 16);
+            this.subtotallb.Size = new System.Drawing.Size(86, 22);
             this.subtotallb.TabIndex = 49;
             this.subtotallb.Text = "Sub total ";
             // 
             // unitpricelb
             // 
             this.unitpricelb.AutoSize = true;
+            this.unitpricelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unitpricelb.Location = new System.Drawing.Point(41, 582);
             this.unitpricelb.Name = "unitpricelb";
-            this.unitpricelb.Size = new System.Drawing.Size(64, 16);
+            this.unitpricelb.Size = new System.Drawing.Size(88, 22);
             this.unitpricelb.TabIndex = 46;
             this.unitpricelb.Text = "Unit Price";
             // 
             // productQuantitylb
             // 
             this.productQuantitylb.AutoSize = true;
+            this.productQuantitylb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productQuantitylb.Location = new System.Drawing.Point(33, 502);
             this.productQuantitylb.Name = "productQuantitylb";
-            this.productQuantitylb.Size = new System.Drawing.Size(104, 16);
+            this.productQuantitylb.Size = new System.Drawing.Size(144, 22);
             this.productQuantitylb.TabIndex = 45;
             this.productQuantitylb.Text = "Product Quantity";
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.notetb);
             this.panel2.Controls.Add(this.confirmbtn);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.purchasedataGridView);
-            this.panel2.Location = new System.Drawing.Point(923, 0);
+            this.panel2.Location = new System.Drawing.Point(939, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(474, 765);
+            this.panel2.Size = new System.Drawing.Size(458, 765);
             this.panel2.TabIndex = 1;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 516);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 516);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 16);
+            this.label1.Size = new System.Drawing.Size(53, 22);
             this.label1.TabIndex = 62;
             this.label1.Text = "Note:";
             // 
             // notetb
             // 
-            this.notetb.Location = new System.Drawing.Point(47, 563);
+            this.notetb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.notetb.Location = new System.Drawing.Point(31, 563);
             this.notetb.Multiline = true;
             this.notetb.Name = "notetb";
             this.notetb.Size = new System.Drawing.Size(233, 76);
@@ -254,9 +272,11 @@
             // 
             // confirmbtn
             // 
-            this.confirmbtn.Location = new System.Drawing.Point(187, 699);
+            this.confirmbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.confirmbtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.confirmbtn.Location = new System.Drawing.Point(171, 692);
             this.confirmbtn.Name = "confirmbtn";
-            this.confirmbtn.Size = new System.Drawing.Size(108, 37);
+            this.confirmbtn.Size = new System.Drawing.Size(127, 44);
             this.confirmbtn.TabIndex = 60;
             this.confirmbtn.Text = "Confirm";
             this.confirmbtn.UseVisualStyleBackColor = true;
@@ -264,6 +284,8 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(9, 29);
             this.label7.Name = "label7";
@@ -273,12 +295,14 @@
             // 
             // purchasedataGridView
             // 
+            this.purchasedataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.purchasedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.purchasedataGridView.Location = new System.Drawing.Point(3, 68);
+            this.purchasedataGridView.Location = new System.Drawing.Point(3, 85);
             this.purchasedataGridView.Name = "purchasedataGridView";
             this.purchasedataGridView.RowHeadersWidth = 51;
             this.purchasedataGridView.RowTemplate.Height = 24;
-            this.purchasedataGridView.Size = new System.Drawing.Size(455, 194);
+            this.purchasedataGridView.Size = new System.Drawing.Size(410, 194);
             this.purchasedataGridView.TabIndex = 57;
             this.purchasedataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.purchasedataGridView_CellContentClick);
             // 
@@ -298,6 +322,7 @@
             // 
             // backbtn
             // 
+            this.backbtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backbtn.ForeColor = System.Drawing.Color.White;
@@ -312,11 +337,11 @@
             // FullNamelb
             // 
             this.FullNamelb.AutoSize = true;
-            this.FullNamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FullNamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FullNamelb.ForeColor = System.Drawing.SystemColors.Control;
-            this.FullNamelb.Location = new System.Drawing.Point(18, 216);
+            this.FullNamelb.Location = new System.Drawing.Point(3, 221);
             this.FullNamelb.Name = "FullNamelb";
-            this.FullNamelb.Size = new System.Drawing.Size(53, 20);
+            this.FullNamelb.Size = new System.Drawing.Size(46, 18);
             this.FullNamelb.TabIndex = 11;
             this.FullNamelb.Text = "label1";
             // 
@@ -340,8 +365,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(23, 29);
             this.pictureBox2.Name = "pictureBox2";
@@ -360,7 +384,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "PurchaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PurchaseForn";
+            this.Text = "Inventory Mangement System, Restock Form";
             this.Load += new System.EventHandler(this.PurchaseForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

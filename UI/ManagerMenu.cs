@@ -41,11 +41,6 @@ namespace UI
 
     
 
-        private void wellb_Click(object sender, EventArgs e)
-        {
-            wellb.Text = " Welcome, " + name;
-
-        }
 
         private void Updatebtn_Click(object sender, EventArgs e)
         {

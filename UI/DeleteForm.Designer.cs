@@ -58,12 +58,13 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 604);
+            this.button1.Location = new System.Drawing.Point(0, 709);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 44);
+            this.button1.Size = new System.Drawing.Size(221, 44);
             this.button1.TabIndex = 12;
             this.button1.Text = "Move to Main Menu";
             this.button1.UseVisualStyleBackColor = true;
@@ -71,10 +72,11 @@
             // 
             // FullNamelb
             // 
+            this.FullNamelb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.FullNamelb.AutoSize = true;
             this.FullNamelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FullNamelb.ForeColor = System.Drawing.SystemColors.Control;
-            this.FullNamelb.Location = new System.Drawing.Point(18, 219);
+            this.FullNamelb.Location = new System.Drawing.Point(3, 221);
             this.FullNamelb.Name = "FullNamelb";
             this.FullNamelb.Size = new System.Drawing.Size(53, 20);
             this.FullNamelb.TabIndex = 11;
@@ -100,18 +102,18 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(23, 29);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(150, 130);
+            this.pictureBox2.Size = new System.Drawing.Size(139, 130);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
             // deletebtn
             // 
+            this.deletebtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.deletebtn.Location = new System.Drawing.Point(657, 412);
             this.deletebtn.Name = "deletebtn";
             this.deletebtn.Size = new System.Drawing.Size(129, 45);
@@ -126,6 +128,8 @@
             this.deleteGrid.AllowUserToDeleteRows = false;
             this.deleteGrid.AllowUserToResizeColumns = false;
             this.deleteGrid.AllowUserToResizeRows = false;
+            this.deleteGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.deleteGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.deleteGrid.Location = new System.Drawing.Point(272, 39);
@@ -149,7 +153,7 @@
             this.Controls.Add(this.deleteGrid);
             this.Name = "DeleteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DeleteForm";
+            this.Text = "Inventory Mangement System, Delete Product";
             this.Load += new System.EventHandler(this.DeleteForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
