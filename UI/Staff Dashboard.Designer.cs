@@ -139,6 +139,7 @@ namespace Staff_Part
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management System, Sales Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load_1);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

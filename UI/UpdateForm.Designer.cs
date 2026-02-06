@@ -311,7 +311,7 @@
             this.Controls.Add(this.updatedatagridview);
             this.Name = "UpdateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Update Menu";
+            this.Text = "Inventory Management System, Update Menu";
             ((System.ComponentModel.ISupportInitialize)(this.updatedatagridview)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -80,7 +80,7 @@ namespace Staff_Part
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                    dataGridView2.DataSource = dt;
+                    //dataGridView2.DataSource = dt;
                 }
             }
             catch (Exception ex)

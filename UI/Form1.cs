@@ -33,10 +33,15 @@ namespace UI
         {
             string username = nametb.Text.ToLower().Trim();
             string userpass = passtb.Text.ToLower().Trim();
-            user = manager.Verify(username, userpass);
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(userpass))
+            {
+                MessageBox.Show("Please fill all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            //user = manager.Verify(username, userpass);
             if (user == null || user.Status=="Inactive")
             {
-                MessageBox.Show("No user found");
+                MessageBox.Show("No user found","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             if (user != null)
             {

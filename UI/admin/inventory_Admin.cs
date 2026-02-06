@@ -28,7 +28,7 @@ namespace UI
             PopulateGridView();
 
         }
-        private void PopulateGridView(string sql = "select * from [dbo].[Product];")
+        private void PopulateGridView(string sql = "select p.*,c.CatagoryName from [dbo].[Product] p join Catagory c on p.CatagoryId=c.CatagoryId ;")
         {
             this.Dt = this.Da.Execute(sql);
             this.grid_Inventory.AutoGenerateColumns = false;
