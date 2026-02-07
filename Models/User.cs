@@ -52,6 +52,12 @@ namespace Models
             Full_Name = fn;
             Status = status;
         }
+        public enum UserRoleType
+        {
+            Admin,
+            Manager,
+            Sales
+        }
 
     }
    

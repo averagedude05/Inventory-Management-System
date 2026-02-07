@@ -10,9 +10,7 @@ namespace UI
     public partial class Form1 : Form
     {
         ManagerRepository manager;
-        string name;
-        string password;
-        public  User user;
+        public  int userRole;
         public Form1()
         {
             InitializeComponent();
@@ -38,22 +36,22 @@ namespace UI
                 MessageBox.Show("Please fill all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            //user = manager.Verify(username, userpass);
-            if (user == null || user.Status=="Inactive")
+            userRole = Service.CurrentUser.CheckUser(username, userpass);
+            if (userRole == -1 )
             {
                 MessageBox.Show("No user found","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-            if (user != null)
+            if (userRole != null)
             {
-                CurrentUser.getCurrentUser(user);
-                if (user.UserRole.ToLower() == "admin")
+                
+                if (userRole==1)
                 {
                     admin_Dash a = new admin_Dash(Service.CurrentUser.Username,Service.CurrentUser.Id.ToString());
                     a.Show();
                     this.Hide();
 
                 }
-                else if (user.UserRole.ToLower() == "manager"&&user.Status=="Active")
+                else if (userRole==2)
                 {
                     ManagerMenu m = new ManagerMenu(this);
                     m.Show();
@@ -61,7 +59,7 @@ namespace UI
                     nametb.Text = " ";
                     passtb.Text = " ";
                 }
-                else if (user.UserRole.ToLower() == "sales" && user.Status == "Active")
+                else if (userRole==3)
                 {
                     Dashboard s = new Dashboard();
                     s.Show();
