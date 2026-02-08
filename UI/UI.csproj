@@ -70,6 +70,7 @@
     <Compile Include="admin\inventory_Admin.Designer.cs">
       <DependentUpon>inventory_Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClearForm.cs" />
     <Compile Include="CreateSaleForm.cs">
       <SubType>Form</SubType>
     </Compile>

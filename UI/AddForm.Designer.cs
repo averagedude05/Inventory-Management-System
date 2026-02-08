@@ -72,7 +72,7 @@
             this.dgvloadproduct.RowTemplate.Height = 24;
             this.dgvloadproduct.Size = new System.Drawing.Size(1013, 267);
             this.dgvloadproduct.TabIndex = 23;
-            this.dgvloadproduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvloadproduct_CellContentClick);
+            
             // 
             // clearbtn
             // 
@@ -272,7 +272,7 @@
             this.FullNamelb.Size = new System.Drawing.Size(53, 20);
             this.FullNamelb.TabIndex = 13;
             this.FullNamelb.Text = "label1";
-            this.FullNamelb.Click += new System.EventHandler(this.FullNamelb_Click);
+           
             // 
             // AddForm
             // 

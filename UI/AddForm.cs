@@ -50,113 +50,49 @@ namespace UI
 
             ManagerMenu f1 = new ManagerMenu();
             f1.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void savebtn_Click(object sender, EventArgs e)
         {
             
-            string productname= productNametb.Text; 
-            int productquantity; 
-            int catid; 
-            decimal price;
-            int restock;
-            bool isValid = true;//used to make sure no bad data is entered to database
+            //used to make sure no bad data is entered to database
             //error handler only shows the error but doesn't stop from entering the data
-            int v;
-            if (string.IsNullOrEmpty(productname))
+            
+            int Valid = Service.InputValidation.IsInputValid(productNametb.Text, productQuantitytb.Text, productPricttb.Text, restocktb.Text, catagorycombo.SelectedValue.ToString());
+            if (Valid != 0)
             {
-                errorProvider.SetError(productNametb, "Product Name is required");
-                isValid = false;
-
-            }
-            else if (char.IsDigit(productname[0]))
-            {
-                MessageBox.Show("Product name can't start with a number");
-                isValid = false;
+                MessageBox.Show(Service.InputValidation.ErrorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             else
             {
-                errorProvider.SetError(productNametb, ""); //Once SetError is triggered red exclamation mark stays attached to the textbox
-                                                           //until tell it to disappear so "" is used
-            }
-            if (string.IsNullOrEmpty(productQuantitytb.Text))
-            {
-                errorProvider.SetError(productQuantitytb, "Product Quantity is required");
-                isValid = false;
-
-            }
-            else
-            {
-                errorProvider.SetError(productQuantitytb, "");
-            }
-            if (string.IsNullOrEmpty(catagorycombo.SelectedValue.ToString()))
-            {
-                errorProvider.SetError(catagorycombo, "Catagory is required");
-                isValid = false;
-
-            }
-            else
-            {
-                errorProvider.SetError(catagorycombo, "");
-            }
-            if (string.IsNullOrEmpty(productPricttb.Text))
-            {
-                errorProvider.SetError(productPricttb, "Product Price is required");
-                isValid = false;
-
-            }
-            else
-            {
-                errorProvider.SetError(productPricttb, "");
-            }
-            if (string.IsNullOrEmpty(restocktb.Text))
-            {
-                errorProvider.SetError(restocktb, "Restock Level is Empty");
-                isValid = false;
-
-            }
-            else
-            {
-                errorProvider.SetError(restocktb, "");
-            }
-            if (!isValid)
-            {
-                return;//stops the program if all data not valid
-            }
-            try
-            {
-                
-                productquantity = int.Parse(productQuantitytb.Text);
-                catid = int.Parse(catagorycombo.SelectedValue.ToString());                                                     
-                price = decimal.Parse(productPricttb.Text);
-                restock = int.Parse(restocktb.Text);
-                string status = "";
-                p = new Product(productname, productquantity, catid, price,restock,status);
-                int r = m.AddProduct(p);
-                if (r > 0)
+                try
                 {
-                    MessageBox.Show("Prodcut Added Successfully");
-                   loadProduct();
-                }
-                else if (r == -1)
-                {
-                    MessageBox.Show("Product already exists");
-                }
-                else
-                {
-                    MessageBox.Show("Please enter a product");
-                }
 
-            }
-            catch (FormatException fe)
-            {
-                MessageBox.Show("Please enter the correct data");
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error");
-                Console.WriteLine(ex.Message);
+                    string status = "";
+                    int r = Service.AddProduct.createproduct(productNametb.Text, productQuantitytb.Text, catagorycombo.SelectedValue.ToString(), productPricttb.Text, restocktb.Text, status);
+                    if (r == 1)
+                    {
+                        MessageBox.Show("Prodcut Added Successfully");
+                        loadProduct();
+                        ClearForm.Clear(this);
+                    }
+                    else if (r == -1)
+                    {
+                        MessageBox.Show("Product already exists");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a product");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error");
+                    Console.WriteLine(ex.Message);
+                }
             }
             
         }
@@ -169,28 +105,14 @@ namespace UI
 
         private void clearbtn_Click(object sender, EventArgs e)
         {
-            productNametb.Text = "";
-            productQuantitytb.Text = "";
-            productPricttb.Text = "";
-            restocktb.Text = "";
-
+            ClearForm.Clear(this);
         }
 
         private void backbtn_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Form1 f1 = new Form1();
             f1.Show();
-        }
-
-        private void dgvloadproduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void FullNamelb_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
