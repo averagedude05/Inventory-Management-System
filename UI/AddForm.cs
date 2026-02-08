@@ -59,7 +59,7 @@ namespace UI
             //used to make sure no bad data is entered to database
             //error handler only shows the error but doesn't stop from entering the data
             
-            int Valid = Service.InputValidation.IsInputValid(productNametb.Text, productQuantitytb.Text, productPricttb.Text, restocktb.Text, catagorycombo.SelectedValue.ToString());
+            int Valid = Service.InputValidation.IsInputValid(this);
             if (Valid != 0)
             {
                 MessageBox.Show(Service.InputValidation.ErrorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
