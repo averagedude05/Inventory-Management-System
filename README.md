@@ -1,70 +1,32 @@
-📦 Inventory & Sales Management System 
-A desktop-based management solution designed to bridge the gap between inventory control and point-of-sale operations. This project implements a Role-Based Access Control (RBAC) system, ensuring that Admins, Managers, and Staff have tailored interfaces for their specific responsibilities.
-🚀 Key Features
-🔐 Multi-User Authentication
+# 📦 Inventory & Sales Management System
 
-    Admin: Full system oversight. Manages user accounts (Add/Delete/View) and has global visibility into all products, purchases, and sales data.
+A robust C# desktop application for managing retail operations, featuring a secure SQL Server backend and role-specific workflows for Admins, Managers, and Staff.
 
-    Manager: Focuses on supply chain. Handles product entry, updates, and inventory monitoring.
+## 🚀 Admin Features
+* 🔐 **Secure Login:** Access control via secure credentials.
+* 👥 **User Management:** Ability to view, add, or delete system users (Admin, Manager, Staff).
+* 📊 **Global Oversight:** Full access to monitor all products, purchase history, and sales records.
 
-    Staff: Optimized for the storefront. Creates sales for multiple products, manages stock reduction, and prints receipts.
+## 🛠 Manager Features
+* 📦 **Product Control:** Add new products with Category, Price, and Stock details.
+* 📝 **Inventory Editing:** Update existing product details or delete products.
+* 📈 **Stock Automation:**
+    * View and search current stock levels in real-time.
+    * **Auto-Purchase:** The system detects low stock and triggers a restock request.
+    * **Auto-Update:** Inventory counts are automatically updated (+1) when restock requests are processed.
 
-📉 Smart Stock Automation (C# Logic)
+## 💰 Staff Features
+* 🛒 **Create Sales:** Select multiple products in a single transaction.
+* 📉 **Automatic Deduction:** Stock quantity is reduced instantly upon sale completion.
+* 📑 **Sales Tracking:** View personal sales history and print professional sales receipts.
 
-The system features an Automated Procurement Logic handled directly within the application layer:
+## 💻 Tech Stack
+* **Language:** C# (.NET)
+* **Database:** Microsoft SQL Server
+* **Management Tool:** SQL Server Management Studio (SSMS)
 
-    Auto-Restock: The C# code monitors stock levels; when a product hits a "low" threshold, the system automatically triggers a restock request.
-
-    Smart Increment: Once a restock is processed, the system automatically increments the stock count and updates the SQL Server database.
-
-    Real-time Deduction: Stock is automatically reduced the moment a staff member completes a sale.
-
-💰 Point of Sale (POS)
-
-    Supports multi-product selection in a single transaction.
-
-    Automated calculation of totals and stock impact.
-
-    Viewable and printable sales receipts for records.
-
-🛠 Tech Stack
-
-    Frontend/Logic: C# (.NET)
-
-    Database: Microsoft SQL Server
-
-    Management Tool: SQL Server Management Studio (SSMS)
-
-🗄️ Database Schema
-
-The project uses a relational database design to ensure data consistency across users and inventory.
-
-Key Tables Include:
-
-    Users: Stores credentials and roles (Admin/Manager/Staff).
-
-    Products: Tracks pricing, categories, and live stock levels.
-
-    Sales: Logs every transaction performed by the staff.
-
-💻 Technical Highlights
-
-Instead of using database triggers, I implemented the inventory logic within the C# Business Layer. This allows for:
-
-    Better Debugging: Easy to track logic flow within Visual Studio.
-
-    Explicit Control: The application explicitly checks if (stock < limit) before sending an update command to SQL Server.
-
-    Data Integrity: Ensures that the UI and the Database stay perfectly in sync during sales and restocks.
-
-🏗 Installation
-
-    Clone this repository.
-
-    Open the .sln file in Visual Studio.
-
-    Import the SQL script provided in the /Database folder into your SQL Server Management Studio.
-
-    Update the Connection String in the app configuration to point to your local SQL instance.
-
-    Build and Run.
+## 🏗 Installation
+1. Clone the repository.
+2. Import the SQL script from the `/Database` folder into **SSMS**.
+3. Update your `connectionString` in the C# code to match your local SQL Server.
+4. Build and Run via Visual Studio.
