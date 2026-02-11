@@ -21,5 +21,35 @@ A comprehensive, role-based web application designed to automate inventory track
 * **Language:** C# (.NET)
 * **Database:** Microsoft SQL Server
 * **Management Tool:** SQL Server Management Studio (SSMS)
+  
+## 🗺️ **Project Roadmap**
+### Phase 1: Core Foundation (Completed ✅)
 
+    [x] Relational Database Design (SSMS)
+
+    [x] Basic CRUD for Inventory Management
+
+    [x] Automated Stock Deduction on Sale
+
+    [x] Role-Based Access Control (Admin vs. User)
+
+### Phase 2: Enhanced POS Experience (In Progress 🛠️)
+
+    [ ] Search & Filter functionality for products
+
+    [ ] Transaction history and digital receipt generation (PDF/Text)
+
+    [ ] Input validation to prevent negative stock
+
+    [ ] Basic dashboard with "Low Stock" alerts
+
+### Phase 3: Advanced Features (Future)
+
+    [ ] Barcode scanner integration
+
+    [ ] Sales analytics & reporting charts
+
+    [ ] Multi-payment method support (Cash, Card, etc.)
+
+    [ ] Data backup and export to Excel/CSV
 
