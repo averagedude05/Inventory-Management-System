@@ -25,6 +25,8 @@ A comprehensive, role-based web application designed to automate inventory track
 * **UI Framework:** Windows Forms (WinForms)
 * **Database:** Microsoft SQL Server
 * **Management Tool:** SQL Server Management Studio (SSMS)
+## ⚙️ Installation & Setup
+
   
 ## 🗺️ **Project Roadmap**
 ### Phase 1: Core Foundation (Completed ✅)
