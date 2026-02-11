@@ -58,7 +58,7 @@ VALUES
 > **📌 Setup Note:**
 > * **Username Requirement:** The username **must** be exactly `system`. The application's automated restock and auditing logic is hardcoded to look for this specific ID.
 > * **Customization:** You can choose any values you like for the `UserPassword`, `UserPhone`, and `Full_name` fields.
-> * **Database Automation:** Do not worry about the `Status` or `Created_at` columns. Your SQL script handles these automatically, defaulting them to 'Active' and the current server timestamp upon insertion.
+> * **Database Automation:** Do not worry about the `Status` or `Created_at` columns. The SQL script handles these automatically, defaulting them to 'Active' and the current server timestamp upon insertion.
 ## 🗺️ **Project Roadmap**
 ### Phase 1: Core Foundation (Completed ✅)
 - [X] **Relational Database Design:** Normalized tables in SSMS for Users, Products, Sales, and History.
