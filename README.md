@@ -6,7 +6,6 @@ A comprehensive, role-based web application designed to automate inventory track
 
 * 🔐 **Secure Login:** Access control via secure credentials.
 * 👥 **User Management:** Ability to view, add, or delete system users (Admin, Manager, Staff).
-* 📊 **Global Oversight:** Full access to monitor all products, purchase history, and sales records.
 ## 🛠️ Manager Features
 * 📦 **Product Control:** Add new products with Category, Price, and Stock details.
 * 📝 **Inventory Editing:** Update existing product details or delete products.
