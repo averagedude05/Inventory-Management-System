@@ -26,8 +26,39 @@ A comprehensive, role-based web application designed to automate inventory track
 * **Database:** Microsoft SQL Server
 * **Management Tool:** SQL Server Management Studio (SSMS)
 ## ⚙️ Installation & Setup
+### 1. Pulling the repository:
 
-  
+ To get a local copy of the source code, run the following command in your terminal or Git Bash: 
+```bash
+git clone https://github.com/averagedude05/Inventory-Management-System
+```
+### 2. Database Configuration (SSMS)
+
+1. **Create Database:** Open **SQL Server Management Studio (SSMS)** and create a new database named `Inventory Management System`.
+
+2. **Execute Schema:**
+   * Open the `schema.sql` file in SSMS.
+   * Ensure the dropdown menu in the top left is set to **Inventory Management System**.
+   * Click **Execute** (or press **F5**). 
+
+This will automatically create all tables (`Users`, `Product`, `Catagory`, etc.) and set up the relationships (Foreign Keys).
+
+
+
+3. **⚠️ CRITICAL REQUIREMENT:** You must manually insert a "system" user. The application’s auto-restock logic is hardcoded to attribute system-generated changes to this specific `UserName`.
+
+**Run this query in SSMS:**
+
+```sql
+INSERT INTO [dbo].[Users] 
+([UserName], [UserPhone], [UserPassword], [Role], [Full_name]) 
+VALUES 
+('system', '000', 'system_pass', 'System', 'System Account');
+ ```
+> **📌 Setup Note:**
+> * **Username Requirement:** The username **must** be exactly `system`. The application's automated restock and auditing logic is hardcoded to look for this specific ID.
+> * **Customization:** You can choose any values you like for the `UserPassword`, `UserPhone`, and `Full_name` fields.
+> * **Database Automation:** Do not worry about the `Status` or `Created_at` columns. Your SQL script handles these automatically, defaulting them to 'Active' and the current server timestamp upon insertion.
 ## 🗺️ **Project Roadmap**
 ### Phase 1: Core Foundation (Completed ✅)
 - [X] **Relational Database Design:** Normalized tables in SSMS for Users, Products, Sales, and History.
