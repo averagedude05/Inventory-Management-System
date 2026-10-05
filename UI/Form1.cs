@@ -10,9 +10,7 @@ namespace UI
     public partial class Form1 : Form
     {
         ManagerRepository manager;
-        string name;
-        string password;
-        public  User user;
+        public  int userRole;
         public Form1()
         {
             InitializeComponent();
@@ -33,22 +31,27 @@ namespace UI
         {
             string username = nametb.Text.ToLower().Trim();
             string userpass = passtb.Text.ToLower().Trim();
-            user = manager.Verify(username, userpass);
-            if (user == null || user.Status=="Inactive")
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(userpass))
             {
-                MessageBox.Show("No user found");
+                MessageBox.Show("Please fill all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            if (user != null)
+            userRole = Service.CurrentUser.CheckUser(username, userpass);
+            if (userRole == -1 )
             {
-                CurrentUser.getCurrentUser(user);
-                if (user.UserRole.ToLower() == "admin")
+                MessageBox.Show("No user found","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            if (userRole != null)
+            {
+                
+                if (userRole==1)
                 {
                     admin_Dash a = new admin_Dash(Service.CurrentUser.Username,Service.CurrentUser.Id.ToString());
                     a.Show();
                     this.Hide();
 
                 }
-                else if (user.UserRole.ToLower() == "manager"&&user.Status=="Active")
+                else if (userRole==2)
                 {
                     ManagerMenu m = new ManagerMenu(this);
                     m.Show();
@@ -56,7 +59,7 @@ namespace UI
                     nametb.Text = " ";
                     passtb.Text = " ";
                 }
-                else if (user.UserRole.ToLower() == "sales" && user.Status == "Active")
+                else if (userRole==3)
                 {
                     Dashboard s = new Dashboard();
                     s.Show();

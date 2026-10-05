@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Staff_Part
 {
@@ -6,9 +7,10 @@ namespace Staff_Part
     {
         public static SqlConnection GetConnection()
         {
-            return new SqlConnection(
-                @"Data Source=.\SQLEXPRESS;Initial Catalog=Inventory Management System;Integrated Security=True"
-            );
+            string connectionString =
+                ConfigurationManager.ConnectionStrings["db"].ConnectionString;
+
+            return new SqlConnection(connectionString);
         }
     }
 }

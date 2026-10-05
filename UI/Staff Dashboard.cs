@@ -77,11 +77,16 @@ namespace Staff_Part
 
                 
                  
+                
                 Form1 f = new Form1();
                 f.Show();
                 this.Hide();
-               
             }
+        }
+
+        private void Dashboard_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

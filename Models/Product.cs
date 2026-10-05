@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service
+namespace Models
 {
     public class Product
     {
@@ -16,14 +16,14 @@ namespace Service
         public int Restock { get; set; }
         public string Status { get; set; }
 
-        public Product(string productName, int productQuantity, int productCatagory, decimal productPrice, int restock, string stats )
+        public Product(string productName, int productQuantity, int productCatagory, decimal productPrice, int restock, string status )
         {
             ProductName = productName;
             ProductQuantity = productQuantity;
             ProductCatagory = productCatagory;
             ProductPrice = productPrice;
             Restock = restock;
-            Status = stats;
+            Status = status;
         }
     }
 }

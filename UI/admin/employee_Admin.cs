@@ -51,7 +51,7 @@ namespace UI
             this.txtbox_empID.Text = userRepo.GenerateUserID();
         }
 
-        private void PopulateGridView(string sql = "select * from Users;")
+        private void PopulateGridView(string sql = "select * from Users where Status='Active';")
         {
             this.Dt = this.Da.Execute(sql);
             this.grid_User.AutoGenerateColumns = false;
